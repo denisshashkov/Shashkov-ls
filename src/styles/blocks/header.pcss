@@ -6,6 +6,19 @@
   align-items: center;
 }
 
+.logo {
+width: 47px;
+height: 26px;
+color: #464d62;
+font-size: 36px;
+font-weight: 900;
+line-height: 30px;
+&:hover {
+  cursor: pointer;
+  color: #5500f2;
+  transition: 0.3s;
+}
+}
 
 .menu{
  display: flex;
@@ -14,13 +27,17 @@
   display: flex;
   justify-content: space-between;
 	list-style: none;
-	width: 44.375rem;
     padding-left: 1.5625rem;
+}
+&__item {
+  margin-right: 60px;
+  &:last-child {
+    margin-right: 0;
+  }
 }
 &__link:hover {
   transition: 0.3s;
 	color: #5500f2;
-  text-decoration: underline;
 }
 &__link {
 color: #464d62;
@@ -29,7 +46,6 @@ font-size: 16px;
 font-weight: 400;
 line-height: 30px;
   text-decoration: none;
-  margin-left: 0.8125rem;
 }
 }
 
@@ -40,21 +56,25 @@ line-height: 30px;
   list-style: none;
   &__item {
     margin-right: 40px;
+    &:last-child {
+      margin-right: 0;
+    }
   }
-}
-
-.socials__item:last-child {
-  margin-right: 0;
-}
-
-.link-class {
+  &__link {
      width: 31px;
-  height: 28px;
-  fill: rgba(25,30,39, 0.8);
-  &:hover {
-     
-      transition: 0.3s;
-      opacity: 1;
-      fill:  #5500f2;
+    height: 25px;
+    display: block;
+  }
+  &__icon {
+   width: 100%;
+   height: 100%;
+   &:hover {
+     fill:  #5500f2;
+     transition: 0.3s;
+   }
   }
 }
+
+
+
+
