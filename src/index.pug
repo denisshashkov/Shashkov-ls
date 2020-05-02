@@ -10,36 +10,38 @@ html(lang="en")
   body
     .wrapper
       main.maincontent
-        .welcome-section
+        .welcome
           section.fullscreen-section.section-mountains        
             .container
-              header.header
-                .header__logo
+             .wrap
+              section.hero
+                header.header
+                 .header__logo
                   .logo ВА
-                .header__btns
+                 .header__btns
                   nav.menu
                     - var items = ['Главная', 'Обо мне', 'Навыки', 'Работы', 'Отзывы', 'Связаться'];
                     ul.menu__list
                      each item in items
                       li.menu__item
                         a.menu__link #{item}
-                .header__links
-                 - var icons = ['insta', 'vk', 'github'];
-                  ul.socials
-                   each item, index in icons
-                    li.socials__item(class=`${index === 1 ? 'active' : ''}`)
-                      a(href="#").socials__link
-                        +icon(`${item}`, 'socials__icon')
+                 .header__links
+                  - var icons = ['insta', 'vk', 'github'];
+                   ul.socials
+                    each item, index in icons
+                     li.socials__item(class=`${index === 1 ? 'active' : ''}`)
+                       a(href="#").socials__link
+                         +icon(`${item}`, 'socials__icon')
+ 
+
+                .mountains__content
+                  .user-data
+                    .user-data__desc Личный сайт<br> веб разработчика
+                    h1.user-data__name Владимир Астаханов
 
 
-              .mountains__content
-                .user-data
-                  .user-data__desc Личный сайт веб разработчика
-                  h1.user-data__name Владимир Астаханов
-
-
-              .mountains__bottom-btn
-                a(href="#").scroll-down-btn Скролл       
+                .mountains__bottom-btn
+                  a(href="#").scroll-down-btn Скролл       
 
 
               section.about
@@ -67,10 +69,9 @@ html(lang="en")
                     .about__text Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
                     .about__ps Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
 
-          section.values-section
-           section.triangles.values-section__triangles
-             svg.triangles__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
-               polygon(points="0,0 0,100 1000,100")
-             svg.triangles__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
-               polygon(points="0,100 1000,100 1000,0")
-
+        section.values-section
+         section.triangles.values-section__triangles
+           svg.triangles__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
+             polygon(points="0,0 0,100 1000,100")
+           svg.triangles__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
+             polygon(points="0,100 1000,100 1000,0")
