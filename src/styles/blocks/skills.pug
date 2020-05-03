@@ -1,0 +1,6 @@
+ each group in skills
+                .skills__title= group[0]
+                ul.skills__list
+                  each skill, index in group[1]
+                    li.skills__item
+                      +skill(group[2][index], skill )
