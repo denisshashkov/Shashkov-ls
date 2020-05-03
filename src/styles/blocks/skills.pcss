@@ -1,6 +1,7 @@
 .skills {
   display: flex;
-  
+  flex-direction: column;
+ 
 }
   
 .skill {
@@ -9,14 +10,20 @@
   position: relative;
 }  
   
-  
+.user-skills__item{
+  list-style: none;
+  margin-bottom: 45px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}  
+
   .skill__title {
     opacity: 0.5;
 color: #464d62;
 font-family: "Open Sans";
-font-size: 18px;
+font-size: 16px;
 font-weight: 700;
-line-height: 48px;
 text-transform: uppercase;
     position: absolute;
     top: 50%;
@@ -28,4 +35,14 @@ text-transform: uppercase;
   circle:last-child {
     transform: rotate(180deg);
     transform-origin: 50% 50%;
+  }
+
+  .skills-row__list {
+    display: flex;
+    justify-content: center;
+  }
+
+  .skills-row__title {
+    padding-left: 120px;
+    margin-bottom: 30px;
   }
