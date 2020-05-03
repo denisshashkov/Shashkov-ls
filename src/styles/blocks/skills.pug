@@ -1,4 +1,11 @@
- each group in skills
+ 
+
+
+                       -var skills = [
+                ['Front-end', ['html5','css3', 'javascript', 'Jquery и Vue.js'], [25,15,75,25]],
+                ['Workflow', ['Git', 'Terminal', 'gulp', 'Webpack'],[15,25,50,40]],
+              ]
+              each group in skills
                 .skills__title= group[0]
                 ul.skills__list
                   each skill, index in group[1]
