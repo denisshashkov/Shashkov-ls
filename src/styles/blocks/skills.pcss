@@ -35,6 +35,8 @@ text-transform: uppercase;
   circle:last-child {
     transform: rotate(180deg);
     transform-origin: 50% 50%;
+    animation: skillProgress 5s linear infinite;
+    //animation-play-state: paused;
   }
 
   .skills-row__list {
@@ -44,6 +46,13 @@ text-transform: uppercase;
 
   .skills-row__title {
     margin-bottom: 30px;
-    
+  }
 
+  @keyframes skillProgress {
+    0% {
+      stroke-dashoffset: 502;
+    }
+    100% {
+      stroke-dashoffset: 0;
+    }
   }

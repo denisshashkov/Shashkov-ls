@@ -69,7 +69,7 @@ html(lang="en")
                     .about__ps Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
 
         section.values-section
-          .values-container
+          .container
 
            .triangles.values-section__triangles
              svg.triangles__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
@@ -78,7 +78,8 @@ html(lang="en")
                polygon(points="0,100 1000,100 1000,0")
            .values    
             .values__left 
-             +image("content/backpag.png", "backpag-pic") 
+             .values__left-content
+              +image("content/backpag.png", "backpag-pic") 
             .values__right 
              .values__title
                 h2 Чем я могу быть полезен вам 
@@ -118,7 +119,7 @@ html(lang="en")
                               stroke-width="20px"                 
                               stroke-dasharray="502.4"
                               stroke-dashoffset="376.8"
-                              style=`animation-delay: -${percent}s`
+                              style=`animation-delay: -${percent}s`                                                                                                             
                                   )
 
                              .skill__title #{skill}
@@ -130,7 +131,7 @@ html(lang="en")
 
 
         section.section-works.fullscreen-section
-         .works-container
+         .container
           h2.section-title Мои работы
           
           .works
@@ -138,7 +139,7 @@ html(lang="en")
              .slider
               
 
-               +image('content/slide_1.jpg', 'slider-pic')
+               +image('content/slide_4.jpg', 'slider-pic')
                .slider__preview
                  ul.previews
                   - for (var i = 1; i < 5; i++)
@@ -178,7 +179,7 @@ html(lang="en")
 
         .buda
           section.reviews-section 
-            .reviews-container
+            .container.reviews-container
              .reviews
               .reviews-wrap
                .reviews-wrap__title
@@ -221,8 +222,7 @@ html(lang="en")
                             span Преподаватель    
 
           section.form-section
-            .form-wrapper
-              .form-container
+           .container                      
                .form-title 
                  h2 Связаться со мной
 

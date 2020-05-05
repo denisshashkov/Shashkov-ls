@@ -1,14 +1,13 @@
 .values-section {
   min-height: 735px;
   position: relative;
+  margin-bottom: 100px;
 }
 
 .values {
   display: flex;
   padding-top: 130px;
-  &-container {
-    margin: 0 auto;
-  }
+  
   &__title {
     color: #464d62;
 font-family: "Open Sans";
@@ -27,10 +26,15 @@ line-height: 30px;
 max-width: 585px;
 margin-bottom: 90px;
   }
-  &__left{
-  width: 640px;
+  &__left {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+}
+}
+
+.values__left-content{
   display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  justify-content: center;
+  position: static;
 }
