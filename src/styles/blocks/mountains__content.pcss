@@ -9,10 +9,18 @@
 
 
 .user-data {
+  @include desktop {
+   flex-direction: row;
+   align-items: flex-start;
+  }
   display: flex;
   flex-direction: column;
   align-items: center;
   &__desc {
+    @include desktop {
+      text-align: right;
+      margin-right: 50px;
+    }
 opacity: 0.4;
 color: #464d62;
 font-size: 18px;

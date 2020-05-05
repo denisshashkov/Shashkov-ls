@@ -5,6 +5,9 @@
 }
 
 .values {
+  @include desktop {
+    justify-content: space-between;
+  }
   display: flex;
   padding-top: 130px;
   
@@ -27,14 +30,20 @@ max-width: 585px;
 margin-bottom: 90px;
   }
   &__left {
-    position: relative;
     display: flex;
     align-items: flex-end;
 }
 }
 
 .values__left-content{
+  @include desktop {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-26%, -31%)
+  }
   display: flex;
   justify-content: center;
   position: static;
 }
+

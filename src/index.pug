@@ -31,7 +31,12 @@ html(lang="en")
                      li.socials__item(class=`${index === 1 ? 'active' : ''}`)
                        a(href="#").socials__link
                          +icon(`${item}`, 'socials__icon')
- 
+                 
+                 button(type="button").close-menu  
+                     +icon(`Cross`, 'cross-image') 
+
+                 .header-menu__link
+                   .header-menu__link__bars
 
                 .mountains__content
                   .user-data

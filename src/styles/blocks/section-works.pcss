@@ -8,15 +8,25 @@
 }
 
 .works {
+  @include desktop {
+    background: url('../images/content/2.png')no-repeat;
+    background-position: 62%,50%;
+  }
   display: flex;
   background: url('../images/content/4.png')no-repeat;
   background-position: 75%,50%;
   justify-content: space-between;
   
   &__right {
+    @include desktop {
+      max-width: 340px;
+    }
     max-width: 360px;
   }
   &__left {
+    @include desktop {
+      max-width: 640px;
+    }
     max-width: 980px;
   }
   &__desc-text {
@@ -41,10 +51,15 @@ margin-bottom: 45px;
   }
 }
 
+
 .slider {
   position: relative;
 
   &__preview {
+    @include desktop {
+      bottom: 11%;
+      height: 400px;
+    }
     position: absolute;
     right: 0;
     bottom: 8%;

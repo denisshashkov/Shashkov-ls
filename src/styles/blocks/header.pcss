@@ -74,6 +74,67 @@ line-height: 30px;
   }
 }
 
+.close-menu {
+  display: none;
+  width: 20px;
+  height: 20px;
+}
+
+.header-menu__link {
+  position: relative;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  display: none;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.header-menu__link__bars {
+		background: #414c63;
+		width: 24px;
+		height: 5px;
+		border-radius: 3px;
+  display: block;
+  
+    
+	}
 
 
+
+  .header-menu__link__bars:before {
+  background: #414c63;
+  width: 24px;
+  height: 5px;
+  border-radius: 3px;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+}
+
+.header-menu__link__bars:after {
+  background: #414c63;
+  width: 24px;
+  height: 5px;
+  border-radius: 3px;
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+}
+
+
+
+
+.header-menu {
+  width: 24px;
+  height: 45px;
+	vertical-align: middle;
+	position: relative;
+	height: 25px;
+
+  
+}
 
