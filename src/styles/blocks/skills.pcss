@@ -18,6 +18,8 @@
   }
 }  
 
+
+
   .skill__title {
     opacity: 0.5;
 color: #464d62;
@@ -31,14 +33,13 @@ text-transform: uppercase;
     transform: translate(-50%, -50%)
   }
 
-
-  circle:last-child {
+  circle:nth-child(2) {
     transform: rotate(180deg);
     transform-origin: 50% 50%;
-    animation: skillProgress 10s linear infinite;
+    //animation: skillProgress 10s linear infinite;
     //animation-play-state: paused;
   }
-
+  
   .skills-row__list {
     display: flex;
     justify-content: flex-start;
@@ -56,3 +57,5 @@ text-transform: uppercase;
       stroke-dashoffset: 0;
     }
   }
+
+  

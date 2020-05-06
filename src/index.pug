@@ -104,9 +104,9 @@ html(lang="en")
                 li.user-skills__item.skills-row 
                   h3.skills-row__title #{item[0]}
                   ul.skills-row__list
-                    each skill in item[1]
+                    each skill, index in item[1]
                       li.skills-row__item
-                        .skill
+                         .skill
                            svg(viewBox="0 0 200 200")
                              circle( 
                               cx="100" 
@@ -122,11 +122,12 @@ html(lang="en")
                               r="80"
                               fill="transparent"
                               stroke="url(#gradient)"               
-                              stroke-width="20px"                 
+                              stroke-width="20px"                                     
                               stroke-dasharray="502.4"
-                              stroke-dashoffset="376.8"
-                              style=`animation-delay: -${percent}s`                                                                                                             
+                              stroke-dashoffset="376.8"                         
+                              style=`animation-delay: -${item[2][index]}s`                                                                                                                                                                                                                                                     
                                   )
+
 
                              .skill__title #{skill}
             svg(style="width:0; height:0; position: absolute;" aria-hidden="true")
