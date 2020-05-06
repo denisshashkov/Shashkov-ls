@@ -4,7 +4,6 @@
 }
 
 .scroll-down-btn {
-  position: relative;
 width: 64px;
 height: 17px;
 color: #464d62;
@@ -15,15 +14,18 @@ text-decoration: none;
 margin-right: 20px;
 &:hover {
   color: #5500f2;
+  transition: 0.3s;
 }
-&:after {
-  display: block;
-    width: 20px;
-    height: 30px;
-    content: "";
-    background: svg-load('scroll.svg', fill= #464d62) no-repeat;
-    position: absolute;
-    left: 125%;
-    top: 35%;
+}
+
+.scroll-image {
+display: block;
+width: 20px;
+height: 24px;
+fill: #464d62;
+cursor: pointer;
+&:hover {
+  fill: #5500f2;
+  transition: 0.3s;
 }
 }

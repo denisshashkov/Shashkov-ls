@@ -10,11 +10,13 @@
 .works {
   @include desktop {
     background: url('../images/content/2.png')no-repeat;
-    background-position: 62%,50%;
+    background-position-x: 62%;
+    background-position-y: 0;
   }
   display: flex;
   background: url('../images/content/4.png')no-repeat;
-  background-position: 75%,50%;
+  background-position-x: 71%;
+  background-position-y: 27%;
   justify-content: space-between;
   
   &__right {
@@ -70,10 +72,10 @@ margin-bottom: 45px;
 height: 100px;
 cursor: pointer;
 &--active {
-  border: solid 2px yellow;
+  border: solid 2px #DC9322;
 }
 &:hover {
-  border: solid 2px yellow;
+  border: solid 2px #DC9322;
 }
 }
 
@@ -142,8 +144,14 @@ text-transform: uppercase;
     width: 50px;
 height: 50px;
 background-color: #353e4e;
+&:hover {
+  background-color: #5500F2;
+  transition: 0.3s;
+}
   }
 }
+
+
 
 .arow__up {
 width: 10px;
