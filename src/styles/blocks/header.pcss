@@ -6,6 +6,10 @@
   align-items: center;
 }
 
+.header__logo {
+  flex: 0.5;
+}
+
 .logo {
 width: 47px;
 height: 26px;
@@ -81,9 +85,11 @@ line-height: 30px;
 }
 
 .header-menu__link {
+  @include tablets {
+    display: flex;
+  }
   position: relative;
   height: 20px;
-  display: flex;
   align-items: center;
   display: none;
   &:hover {
@@ -95,19 +101,13 @@ line-height: 30px;
 		background: #414c63;
 		width: 24px;
 		height: 5px;
-		border-radius: 3px;
   display: block;
-  
-    
 	}
-
-
 
   .header-menu__link__bars:before {
   background: #414c63;
   width: 24px;
-  height: 5px;
-  border-radius: 3px;
+  height: 4px;
   content: "";
   display: block;
   position: absolute;
@@ -117,8 +117,7 @@ line-height: 30px;
 .header-menu__link__bars:after {
   background: #414c63;
   width: 24px;
-  height: 5px;
-  border-radius: 3px;
+  height: 4px;
   content: "";
   display: block;
   position: absolute;
@@ -134,7 +133,23 @@ line-height: 30px;
 	vertical-align: middle;
 	position: relative;
 	height: 25px;
-
-  
 }
 
+
+.menu-active {
+	@include tablets{
+	height: 0;
+	width: 100%;
+	position: fixed;
+	z-index: 3;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow: hidden;
+	transition: 0.2s;
+	align-items: center;
+	justify-content: center;
+	background-color: #2f3234;
+	}
+}

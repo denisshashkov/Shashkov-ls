@@ -4,12 +4,18 @@
     align-items: flex-end;
  
   &__container {
+    @include tablets {
+      max-width: 740px;
+    }
      display: flex;
   justify-content: space-between;
   max-width: 958px;
   margin: 0 auto;
   }
   &__left {
+    @include tablets {
+      margin-right: 60px;
+    }
     margin-right: 90px;
   }
   &__right {
@@ -43,6 +49,10 @@ color: #db0200;
 }
   }
   &__title {
+    @include tablets {
+      font-size: 30px;
+      margin-bottom: 40px;
+    }
 color: #464d62;
 font-family: "Open Sans";
 font-size: 36px;
@@ -54,6 +64,9 @@ margin-bottom: 25px;
 
 
 .user {
+  @include tablets {
+    margin-bottom: 65px;
+  }
   display: flex;
   justify-content: center;
   margin-bottom: 50px;
@@ -84,6 +97,9 @@ line-height: 30px;
 }
 
 .about__text {
+  @include tablets {
+    margin-bottom: 40px;
+  }
   margin-bottom: 90px;
 }
 
