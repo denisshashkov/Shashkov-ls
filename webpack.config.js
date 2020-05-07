@@ -9,7 +9,7 @@ const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = (env, argv) => {
   const isProductionBuild = argv.mode === "production";
-  const publicPath = '/';
+  const publicPath = '/Shashkov-ls/';
 
   const pcss = {
     test: /\.(p|post|)css$/,
@@ -78,7 +78,10 @@ module.exports = (env, argv) => {
         use: ["pug-plain-loader"]
       },
       {
-        use: ["pug-loader"]
+        loader: "pug-loader",
+        query: {
+          pretty: true
+        }
       }
     ]
   };

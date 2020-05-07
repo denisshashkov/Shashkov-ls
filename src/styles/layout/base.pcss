@@ -30,7 +30,12 @@ body {
   margin: 0 auto;
   max-width: 1480px;
   width: 95%;
-  // width: 1490px;
+   @include desktop {
+     max-width: 1080px;
+   }
+   @include tablets {
+     max-width: 740px;
+   }
 
   @include phones {
     width: 85%;
@@ -39,7 +44,8 @@ body {
 
 .fullscreen-section {
   height: 100vh;
-  min-height: 650px;
+  min-height: 672px;
+  position: relative;
 }
 
 button {
@@ -63,7 +69,6 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: normal;
   margin: 0;
 }
 
