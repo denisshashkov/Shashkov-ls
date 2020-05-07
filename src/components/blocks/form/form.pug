@@ -1,0 +1,28 @@
+.form-title 
+    h2 Связаться со мной
+
+form.form-wrap
+                .form__row
+                  label.form__block
+                    span.form__block-title Введите ваше имя  
+                    span.form-icon  
+                        +icon("Avatar", "input-image") 
+                    input(type="text").form__input
+                    
+                  label.form__block
+                    span.form__block-title Введите ваш email 
+                    span.form-icon  
+                        +icon("envelope", "input-image")
+                    input(type="text").form__input   
+
+                .form__row
+                  label.form__block-area 
+                    span.form__block-title Сообщение к письму
+                    span.form-icon 
+                        +icon("message", "input-image")
+                    textarea(name="comment" placeholder="" required).form__input-textarea 
+
+
+                .form__row
+                  .form__button
+                    button(type="submit").btn-submit отправить    

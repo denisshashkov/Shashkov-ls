@@ -4,37 +4,9 @@ section.section-works.fullscreen-section
           
           .works
             .works__left
-             .slider
-              
-
-               +image('content/slide_4.jpg', 'slider-pic')
-               .slider__preview
-                 ul.previews
-                  - for (var i = 1; i < 5; i++)
-                    li(class =`previews__item ${i===4 ? "previews__item--active" : ""}`) 
-                      +image(`content/slide_${i}.jpg`, "previews__image")                                    
-               .slider__buttons
-                 .slider-buttons
-                    button.slider-buttons__item.slider-buttons__item--slide--prev 
-                        +icon(`slidearow`, 'arow__up')                       
-                    button.slider-buttons__item.slider-buttons__item--slide--next
-                        +icon(`slidearow`, 'arow__down')  
-
-            .works__right
-             .works__tags
-               - var tags = ['html', 'css', 'javascript']
-               each tag in tags
-                 ul.tags
-                   li.tags__item #{tag}
-             .works__text
-                h3.works__title Сайт школы <br> образования
-                .works__desc-text
-                  p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-                .iconed-link
-                 a.iconed-link__icon
-                   +icon(`link`, 'link__pic') 
-                 a.iconed-link__text
-                   p посмотреть сайт 
+             include ../blocks/slider/slider
+           
+            include ../blocks/works-right/works-right            
 .triangles.values-section__triangles-bottom
            svg.triangles__item-bottom(viewBox="0 0 1000 100" preserveAspectRatio="none")
             polygon(points="0,0 0,100 1000,100")
