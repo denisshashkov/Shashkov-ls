@@ -7,6 +7,9 @@
     @include tablets {
       max-width: 740px;
     }
+    @include small {
+      flex-direction: column;
+    }
      display: flex;
   justify-content: space-between;
   max-width: 958px;
@@ -15,6 +18,9 @@
   &__left {
     @include tablets {
       margin-right: 60px;
+    }
+    @include small {
+      margin: 0px 0px 40px 0px;
     }
     margin-right: 90px;
   }
@@ -53,6 +59,10 @@ color: #db0200;
       font-size: 30px;
       margin-bottom: 40px;
     }
+    @include small {
+      padding-right: 25px;
+      line-height:36px ;
+    }
 color: #464d62;
 font-family: "Open Sans";
 font-size: 36px;
@@ -66,6 +76,9 @@ margin-bottom: 25px;
 .user {
   @include tablets {
     margin-bottom: 65px;
+  }
+  @include small {
+    margin-bottom: 10px;
   }
   display: flex;
   justify-content: center;
@@ -118,4 +131,10 @@ font-weight: 600;
 line-height: 30px;
 padding-left: 70px;
 white-space: nowrap;
+}
+
+.user-info__data {
+  @include small {
+    margin-right: 40px;
+  }
 }

@@ -16,6 +16,19 @@
   }
 }
 
+@mixin medium {
+  @media screen and (max-width: 580px) {
+    @content;
+  }
+}
+
+@mixin small {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+
+
 @mixin phones() {
   @media screen and (max-width: $bp-phones) {
     @content;

@@ -1,5 +1,10 @@
 .hero {
-  min-height: 900px;
+  @include small {
+    justify-content: flex-start;
+    height: 100%;
+    padding: 0;
+    margin-bottom: 120px;
+  }
   height: 100vh;
   display: flex;
   flex-direction: column;

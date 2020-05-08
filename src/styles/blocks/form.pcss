@@ -8,10 +8,35 @@
 
 
 .form-title {
+  @include tablets {
+    text-align: center;
+    font-size: 23px;
+    margin-bottom: 60px;
+  }
+  @include small {
+    font-size: 20px;
+  }
   margin-bottom: 70px;
 }
 
+.form-wrap {
+  @include tablets {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 .form__input {
+  @include tablets {
+    width: 333px;
+  }
+  @include medium {
+    width: 260px;
+  }
+  @include small {
+    width: 320px;
+  }
   position: relative;
   padding:5px 5px 5px 40px;
   width: 377px;
@@ -35,6 +60,9 @@
 }
 
 .form__block {
+  @include tablets {
+    margin-right: 20px;
+  }
   display: flex;
   flex-direction: column;
   margin-right: 85px;
@@ -53,6 +81,9 @@ padding-left: 40px;
 }
 
 .form__row {
+  @include small {
+    flex-direction: column;
+  }
   display: flex;
   margin-bottom: 40px;
 }
@@ -63,6 +94,15 @@ padding-left: 40px;
 }
 
 .form__input-textarea  {
+  @include tablets {
+    width: 687px;
+  }
+  @include medium {
+    width:540px;
+  }
+  @include small {
+    width: 330px;
+  }
   position: relative;
   padding:10px 40px 10px 40px;
   width: 840px;
@@ -76,6 +116,11 @@ padding-left: 40px;
 }
 
 .btn-submit {
+  @include small {
+    width: 259px;
+    height: 60px;
+    border-radius: 30px 0;
+  }
 width: 347px;
 height: 80px;
 border-radius: 40px 5px;

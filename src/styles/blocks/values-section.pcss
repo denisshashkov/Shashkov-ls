@@ -22,17 +22,24 @@
     @include tablets {
       text-align: center;
     }
+    @include small {
+      text-align: start;
+      padding: 0px 84px;
+    }
     color: #464d62;
 font-family: "Open Sans";
 font-size: 16px;
 font-weight: 700;
 line-height: 36px;
 margin-bottom: 58px;
-width: 585px;
   }
   &__text {
     @include tablets {
       text-align: center;
+    }
+    @include small {
+      text-align: start;
+      padding: 0px 100px;
     }
     opacity: 0.5;
 color: #464d62;
@@ -52,10 +59,9 @@ margin-bottom: 90px;
     }
 }
  &__right {
-  width: 900px;
+  max-width: 900px;
   display: flex;
     flex-direction: column;
-    align-items: center;
  }
 }
 

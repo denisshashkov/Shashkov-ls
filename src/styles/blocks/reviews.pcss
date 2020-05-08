@@ -20,9 +20,22 @@
 }
 
 .reviews-wrap {
+  @include small {
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 25px;
+  }
   display: flex;
   margin-bottom: 80px;
   &__title {
+    @include tablets {
+      margin-right: 25px;
+      font-size: 22px;
+    }
+    @include small {
+      font-size: 19px;
+      margin-bottom: 25px;
+    }
     margin-right: 230px;
   }
 }
@@ -55,12 +68,32 @@ transform: rotate(180deg);
   height: 10px;
   }
 
+
 .reviews__slider-wrap {
   display: flex;
   justify-content: flex-end;
+  @include small {
+    width: 200%;
+    justify-content: center;
+  }
 }
 
 .slide {
+  @include tablets {
+    margin-right: 23px;
+  }
+  @include small {
+    width: 100%;
+    overflow: hidden;
+    justify-content: center;
+  }
+  &-left {
+    @include small {
+    width: 0;
+    margin-right: 0;
+    }
+    margin-right: 20px;
+  }
   max-width: 430px;
   display: flex;
   margin-right: 70px;
@@ -88,6 +121,10 @@ margin-bottom: 25px;
 }
 
   .quote-image {
+    @include tablets {
+      width: 30px;
+height: 26px;
+    }
 width: 75px;
 height: 63px;
 background-color: #464d62;
@@ -95,12 +132,6 @@ opacity: 0.05;
 background: none;
   }
 
-.slide {
-  display: flex;
-  &-left {
-    margin-right: 20px;
-  }
-}  
 
 .avatar-reviews {
 width: 75px;
@@ -118,6 +149,9 @@ display: block;
 }
 
 .user-name {
+  @include small {
+    line-height: 30px;
+  }
   color: #464d62;
 font-family: "Open Sans";
 font-size: 18px;

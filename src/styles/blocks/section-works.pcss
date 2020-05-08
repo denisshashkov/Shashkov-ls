@@ -1,11 +1,26 @@
 .section-works {
   min-height: 737px;
   margin-bottom: 41px;
+  @include desktop {
+    background: url('../images/content/2.png')no-repeat;
+  background-position-y: 16%;
+  background-position-x: 60%;
+  }
+  @include tablets {
+  background-position-x: 97%;
+  background-position-y: 12% ;
+  }
+  background: url('../images/content/4.png')no-repeat;
+  background-position-x: 68%;
+  background-position-y: 35%;
 }
 
 .section-title {
   @include tablets {
     font-size: 30px;
+  }
+  @include tablets {
+    margin-bottom: 50px;
   }
   margin-bottom: 80px;
 }
@@ -16,19 +31,11 @@
 }
 
 .works {
-  @include desktop {
-    background: url('../images/content/2.png')no-repeat;
-  background-position-y: 0;
-  background-position-x: 62%;
-  }
+  
   @include tablets {
     flex-direction: column;
-    background-position-x: 110%;
   }
   display: flex;
-  background: url('../images/content/4.png')no-repeat;
-  background-position-x: 71%;
-  background-position-y: 27%;
   justify-content: space-between;
   
   &__right {
@@ -62,6 +69,7 @@
   &__desc-text {
     @include tablets {
       text-align: center;
+      padding: 0px 120px;
     }
     opacity: 0.7;
     color: #464d62;
@@ -77,6 +85,7 @@
   &__title {
     @include tablets {
       font-size: 30px;
+      padding-right: 0;
     }
     color: #464d62;
 font-family: "Open Sans";
@@ -84,6 +93,7 @@ font-size: 26px;
 font-weight: 700;
 line-height: 40px;
 margin-bottom: 45px;
+padding-right: 10px;
   }
 }
 
@@ -96,6 +106,9 @@ margin-bottom: 45px;
       bottom: 11%;
       height: 400px;
     }
+    @include small {
+      bottom: 16%;
+    }
     position: absolute;
     right: 0;
     bottom: 8%;
@@ -104,6 +117,12 @@ margin-bottom: 45px;
 
 .previews__item:nth-child(1){
   @include desktop {
+    opacity: 0;
+  }
+}
+
+.previews__item:nth-child(2){
+  @include small {
     opacity: 0;
   }
 }
