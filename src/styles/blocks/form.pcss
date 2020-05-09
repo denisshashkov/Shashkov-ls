@@ -25,6 +25,9 @@
     flex-direction: column;
     align-items: center;
   }
+  @include iphone {
+    text-align: center;
+  }
 }
 
 .form__input {
@@ -36,6 +39,9 @@
   }
   @include small {
     width: 320px;
+  }
+  @include iphone {
+    width: 300px;
   }
   position: relative;
   padding:5px 5px 5px 40px;
@@ -56,6 +62,9 @@
 }
 
 .form-icon {
+  @include iphone {
+    opacity: 0;
+  }
   margin-bottom: -40px;
 }
 
@@ -63,13 +72,24 @@
   @include tablets {
     margin-right: 20px;
   }
+  @include iphone {
+    margin-right: 0;
+  }
   display: flex;
   flex-direction: column;
   margin-right: 85px;
+  &:first-child {
+    @include iphone {
+      margin-bottom: 30px;
+    }
+  }
   &:last-child {
     margin-right: 0;
   }
   &-title {
+    @include iphone {
+      padding: 0;
+    }
     opacity: 0.5;
 color: #464d62;
 font-size: 16px;
@@ -102,6 +122,9 @@ padding-left: 40px;
   }
   @include small {
     width: 330px;
+  }
+  @include iphone {
+    width: 310px;
   }
   position: relative;
   padding:10px 40px 10px 40px;

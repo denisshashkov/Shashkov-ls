@@ -5,6 +5,9 @@
   @include tablets {
     height: 482px;
   }
+  @include medium {
+    height: 600px;
+  }
   @include small {
     height: 741px;
   }
@@ -58,6 +61,9 @@ justify-content: center;
     justify-content: start;
     margin-right: 72px;
   }
+  @include small {
+    margin-right: 0;
+  }
   display: flex;
   margin-right: 130px;
   &-date {
@@ -97,6 +103,9 @@ line-height: 30px;
 }
 
 .footer__btns {
+  @include iphone {
+    margin-bottom: 30px;
+  }
   margin-bottom: 50px;
 }
 
@@ -144,6 +153,9 @@ font-style: italic;
     }
     @include medium {
       width: 280px;
+    }
+    @include iphone {
+      margin-bottom: 30px;
     }
     width: 37%;
     display: flex;
@@ -193,4 +205,8 @@ font-style: italic;
   @include small {
     margin-bottom: 47px;
   }
+  @include iphone {
+    margin-bottom: 30px;
+  }
+
 }
