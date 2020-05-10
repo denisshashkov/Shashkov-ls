@@ -39,6 +39,7 @@ line-height: 30px;
   @include tablets {
     flex-wrap: wrap;
     justify-content: end;
+    display: none;
   }
   display: flex;
   justify-content: space-between;
@@ -58,6 +59,10 @@ line-height: 30px;
 	color: #5500f2;
 }
 &__link {
+  @include tablets {
+    font-size: 20px;
+    font-weight: 600;
+  }
 color: #464d62;
 font-family: "Open Sans";
 font-size: 16px;
@@ -93,10 +98,24 @@ line-height: 30px;
   }
 }
 
-.close-menu {
-  display: none;
+.closeActive {
+  @include small {
+    right: 14%;
+  }
+  position: fixed;
+  right: 5%;
+  z-index: 23;
   width: 20px;
   height: 20px;
+  opacity: 1;
+  &:hover {
+    transform: scale(1.2);
+    transition: 0.1s;
+  }
+}
+
+.close-button {
+  opacity: 0;
 }
 
 .header-menu__link {
@@ -141,7 +160,6 @@ line-height: 30px;
 
 
 
-
 .header-menu {
   width: 24px;
   height: 45px;
@@ -150,21 +168,26 @@ line-height: 30px;
 	height: 25px;
 }
 
+   
 
-.menu-active {
-	@include tablets{
-	height: 0;
-	width: 100%;
+.cross-image {
+  width: 20px;
+  height: 20px;
+}
+
+.menuActive {
+  @include tablets {
+	width: 40%;
 	position: fixed;
 	z-index: 3;
 	top: 0;
-	left: 0;
 	right: 0;
 	bottom: 0;
 	overflow: hidden;
-	transition: 0.2s;
+	transition: 0.5s;
 	align-items: center;
 	justify-content: center;
-	background-color: #2f3234;
+	background-color: #fff;
 	}
 }
+
