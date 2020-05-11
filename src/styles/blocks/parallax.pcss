@@ -1,7 +1,12 @@
 .parallax {
-  position: relative;
+  position: absolute;
   min-height: 1440px;
   overflow: hidden;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
  
   .parallax__layer {
@@ -13,7 +18,6 @@
     will-change: transform;
     &:nth-child(1) {
       .parallax__image{
-      
       object-fit: cover;
      width: 100%;
      height: 100%;
