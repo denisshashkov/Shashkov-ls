@@ -7,7 +7,7 @@ Array.from(layers).forEach(layer => {
   const divider = layer.dataset.speed;
   const strafe = wscroll * divider / 10;
 
-  layer.style.transform = `translateY(-${ strafe }%)`;
+  layer.style.transform = `translateY(-${strafe}%)`;
 });
 }
 
