@@ -16,8 +16,8 @@ header.header#app
                        a(href="#", target="_blank").socials__link
                          +icon(`${item}`, 'socials__icon')
                  
-                 button(type="button").close-button
-                     +icon(`Cross`, 'cross-image') 
+                 button(type="button")(:class="{'closeActive':changed}")
+                     
 
                  .header-menu__link(@click="handleOpen")
                    .header-menu__link__bars
