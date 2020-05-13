@@ -4,18 +4,23 @@
     "skills": [
       {
         "id": 1,
-        "title": "html5",
-        "percent": 100
+        "title": "HTML5",
+        "percent": 25
       },
       {
         "id": 2,
-        "title": "css3",
-        "percent": 50
+        "title": "CSS3",
+        "percent": 25
       },
       {
         "id": 3,
-        "title": "JavaScript & jQuery",
-        "percent": 80
+        "title": "Javascript",
+        "percent": 25
+      },
+      {
+        "id": 4,
+        "title": "Jquery и Vue.js",
+        "percent": 25
       }
     ]
   },
@@ -24,23 +29,23 @@
     "skills": [
       {
         "id": 4,
-        "title": "php",
-        "percent": 30
+        "title": "GIT",
+        "percent": 50
       },
       {
         "id": 5,
-        "title": "mySql",
-        "percent": 60
+        "title": "Terminal",
+        "percent": 25
       },
       {
         "id": 6,
-        "title": "Node.js & npm",
-        "percent": 45
+        "title": "Gulp",
+        "percent": 25
       },
       {
         "id": 7,
-        "title": "Mongo.db",
-        "percent": 70
+        "title": "Webpack",
+        "percent": 25
       }
     ]
   }

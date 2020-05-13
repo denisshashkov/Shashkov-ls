@@ -4,7 +4,7 @@
   }
   display: flex;
   flex-direction: column;
- padding-left: 100px;
+  padding-left: 40px;
 }
   
 .values__widget-container {
@@ -13,13 +13,12 @@
   }
   display: flex;
   flex-direction: column;
- padding-left: 100px;
 }
 
 
 .skill {
-  width: 140px;
-  height: 140px;
+  width: 120px;
+  height: 120px;
   position: relative;
 }  
   
@@ -56,14 +55,7 @@ text-transform: uppercase;
     animation-play-state: paused;
   }
   
-  .skills-row__list {
-    @include small {
-      justify-content: center;
-    }
-    flex-wrap: wrap;
-    display: flex;
-    justify-content: flex-start;
-  }
+  
 
   .skills-row__title {
     @include small {
@@ -81,4 +73,63 @@ text-transform: uppercase;
     }
   }
 
+
+
+  .skills-row__title {
+    margin-bottom: 26px;
+    font-size: 24px;
+    font-weight: 700;
+  }
   
+  .skills-row__list {
+    @include small {
+      justify-content: center;
+    }
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+   
+  }
+  
+  
+
+  
+  
+  .skills__item {
+    margin-bottom: 30px;
+  }
+
+
+  .skill {
+    position: relative;
+    width: 134px;
+    height: 134px;
+  }
+  
+  .skill__circle {
+    fill: transparent;
+    &_under {
+      stroke: #eaeaea;
+      stroke-width: 5px;
+    }
+    &_above {
+      stroke-width: 12px;
+      stroke-dasharray: 121;
+      stroke-dashoffset: 100;
+    }
+  }
+  
+  .skill__circle-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    font-size: 16px;
+    color: rgba($text-color, .5);
+    padding: 14px;
+  
+    @include phones {
+      font-size: 16px;
+    }
+  }
