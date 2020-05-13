@@ -14,6 +14,7 @@ const skill = {
       circle.style.strokeDashoffset = percent;
 
       console.log(dashArray)
+
     },
     
   },
