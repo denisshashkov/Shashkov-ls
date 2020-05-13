@@ -1,6 +1,7 @@
 .buda {
   @include tablets {
     padding-top: 100px;
+    background: url('../images/content/budda/background.png')center center/cover no-repeat;
   }
   padding-top: 60px;
   position: relative;
@@ -11,36 +12,15 @@
     justify-content: space-between;
   width: 100%;
   overflow: hidden;
-}
-
-.buda__container {
-  position: absolute;
-  min-height: 1440px;
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  @media (min-width: 769px) {
-    min-width: 1200px;
-  }
-  @media (min-width: 1201px) {
-    min-width: 1800px;
-  }
-  @media (min-width: 1801px) {
-    min-width: 2560px;
-  }
-  @media (min-width: 2560px) {
-    min-height: 56.25vh;
-  }
+  
 }
 
 
 .parallax__layer-buda {
   position: absolute;
   top: 0;
-  left:0; 
+  left:0;
+  
   width: 100%;
   height: 100%;
   will-change: transform;
@@ -56,12 +36,12 @@
 &:nth-child(2) {
   .parallax__image-buda {
     width: 100%;
-    top: 840px;
+    top: 1440px;
   }
 }
 &:nth-child(3) {
 .parallax__image-buda {
-  top: 460px;
+  top: 1000px;
   left: 50%;
   margin-left: 17%;
 }
@@ -69,13 +49,13 @@
 &:nth-child(4) {
 .parallax__image-buda {
   width: 100%;
-  bottom: 0;
+  bottom: -350px;
 }
 }
 &:nth-child(5) {
 .parallax__image-buda {
-  left: 20%;
-  top: 650px;
+  left:30%;
+  top: 950px;
 }
 }
 &:nth-child(6) {

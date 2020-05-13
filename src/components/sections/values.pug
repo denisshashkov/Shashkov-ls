@@ -1,8 +1,20 @@
 section.values-section 
           .container
 
-            include ../blocks/values/values
-              
-             
-
-             
+            .triangles.values-section__triangles
+             svg.triangles__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
+               polygon(points="0,0 0,100 1000,100")
+             svg.triangles__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
+               polygon(points="0,100 1000,100 1000,0")
+.values    
+            .values__left 
+             .values__left-content
+              +image("content/backpag.png", "backpag-pic") 
+            .values__right 
+             .values__title
+                h2 Чем я могу быть полезен вам 
+             .values__text
+                p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+             .skills
+               #skills-component   
+                      

@@ -4,12 +4,13 @@
   }
   min-height: 500px;
     display: flex;
-    align-items: flex-end;
+    align-items: flex-start;
     position: relative;
  
   &__container {
     @include tablets {
       max-width: 740px;
+      padding-bottom: 150px;
     }
     @include small {
       flex-direction: column;
@@ -18,6 +19,7 @@
   justify-content: space-between;
   max-width: 958px;
   margin: 0 auto;
+  padding-bottom: 190px;
   }
   &__left {
     @include tablets {
