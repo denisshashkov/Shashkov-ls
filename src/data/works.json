@@ -3,16 +3,16 @@
     "id": 1,
     "title": "Сайт школы образования",
     "skills": "Html, Css, JavaScript",
-    "photo": "slide_1.jpg",
-    "link": "//google.com",
+    "photo": "burger.png",
+    "link": "https://denisshashkov.github.io/burger/dist/",
     "desc": "Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!"
   },
   {
     "id": 2,
     "title": "Сайт школы образования",
     "skills": "Html, Css, JavaScript",
-    "photo": "slide_2.jpg",
-    "link": "//yandex.ru",
+    "photo": "airplain.png",
+    "link": " https://denisshashkov.github.io/airplane/",
     "desc": "Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!"
   },
   {
@@ -20,7 +20,7 @@
     "title": "Сайт школы образования",
     "skills": "Html, Css, JavaScript",
     "photo": "slide_3.jpg",
-    "link": "//rambler.ru",
+    "link": "#",
     "desc": "Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!"
   },
   {
@@ -28,7 +28,7 @@
     "title": "Сайт школы образования",
     "skills": "Html, Css, JavaScript",
     "photo": "slide_4.jpg",
-    "link": "//rambler.ru",
+    "link": "#",
     "desc": "Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!"
   },
   {
@@ -36,7 +36,7 @@
     "title": "Сайт школы образования",
     "skills": "Html, Css, JavaScript",
     "photo": "slide_5.jpg",
-    "link": "//rambler.ru",
+    "link": "#",
     "desc": "Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!"
   }
 ]
