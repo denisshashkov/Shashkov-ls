@@ -17,6 +17,8 @@ script(type="text/x-template")#slider-display
         img(:src="currentWork.photo").works-slider__fullpic
         btns(
           @slide="$emit('slide', $event)"
+          :currentIndex="currentIndex"
+          :workCounter="works.length"
         )
         thumbs(
           :works="reversedWorks"
@@ -25,8 +27,8 @@ script(type="text/x-template")#slider-display
 
 script(type="text/x-template")#slider-btns
   .works-slider__buttons
-    a(@click.prevent="$emit('slide', 'next')").works-slider__btn.works-slider__btn_next
-    a(@click.prevent="$emit('slide', 'prev')").works-slider__btn.works-slider__btn_prev
+    button(:disabled="hasNext" @click.prevent="$emit('slide', 'next')").works-slider__btn.works-slider__btn_next
+    button(:disabled="hasPrev" @click.prevent="$emit('slide', 'prev')").works-slider__btn.works-slider__btn_prev
 
 script(type="text/x-template")#slider-thumbs
   ul.works-slider__thumbs

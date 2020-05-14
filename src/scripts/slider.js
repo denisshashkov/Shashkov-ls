@@ -2,6 +2,15 @@ import Vue from "vue";
 
 const btns = {
   template: "#slider-btns",
+  props: ['currentIndex', 'workCounter'],
+  computed: {
+    hasNext () {
+      return this.currentIndex === this.workCounter - 1;
+    },
+    hasPrev () {
+      return this.currentIndex === 0;
+    }
+  }
 };
 const thumbs = {
   template: "#slider-thumbs",
