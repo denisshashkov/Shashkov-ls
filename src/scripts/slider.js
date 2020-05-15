@@ -2,10 +2,20 @@ import Vue from "vue";
 
 const btns = {
   template: "#slider-btns",
+  props: ['currentIndex', 'workCounter'],
+  computed: {
+    hasNext () {
+      return this.currentIndex === this.workCounter -1;
+    },
+    hasPrev () {
+      return this.currentIndex === 0;
+    }
+  }
 };
 const thumbs = {
   template: "#slider-thumbs",
   props: ["works", "currentWork"],
+ 
 };
 
 const display = {
@@ -16,6 +26,11 @@ const display = {
     reversedWorks() {
       const works = [...this.works];
       return works.reverse();
+    }
+  },
+  methods: {
+    thumbsClicked(index) {
+      this.$emit('click', index)
     }
   }
 };
@@ -57,6 +72,9 @@ new Vue({
     },
   },
   methods: {
+    selectSlide(index) {
+      this.currentIndex = this.works.length - 1 - index;
+    },
     makeInfiniteLoopForIndex(value) {
 
       const worksAmountFromZero = this.works.length - 1;
@@ -72,7 +90,7 @@ new Vue({
           this.currentIndex--;
           break;
       }
-    },
+  },  
     makeArrWithRequireImages(array) {
       return array.map((item) => {
         const requirePic = require(`../images/content/${item.photo}`);
