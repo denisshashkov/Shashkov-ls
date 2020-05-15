@@ -15,6 +15,7 @@ const btns = {
 const thumbs = {
   template: "#slider-thumbs",
   props: ["works", "currentWork"],
+
 };
 
 const display = {
@@ -25,6 +26,11 @@ const display = {
     reversedWorks() {
       const works = [...this.works];
       return works.reverse();
+    }
+  },
+  methods: {
+    thumbsClicked(index) {
+      this.$emit('click', index)
     }
   }
 };
@@ -66,6 +72,9 @@ new Vue({
     },
   },
   methods: {
+    selectSlide(index) {
+      this.currentIndex = this.works.length - 1 - index;
+    },
     makeInfiniteLoopForIndex(value) {
 
       const worksAmountFromZero = this.works.length - 1;
