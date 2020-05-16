@@ -6,6 +6,10 @@
     @include iphone {
       opacity: 0;
     }
+    position: relative;
+    &-menu {
+      display: none;
+    }
   }
 	max-width: 100%;
   padding: 60px 0px;
@@ -33,13 +37,16 @@ line-height: 30px;
 }
 
 .menu{
+  @include tablets {
+    display: none;
+  }
  display: flex;
  align-items: center;
 &__list {
   @include tablets {
-    flex-wrap: wrap;
-    justify-content: end;
-    display: none;
+    flex-direction: column;
+    margin-bottom: 20px;
+    display: flex;
   }
   display: flex;
   justify-content: space-between;
@@ -48,6 +55,7 @@ line-height: 30px;
 &__item {
   @include tablets {
     line-height: 30px;
+    margin-bottom: 25px;
   }
   margin-right: 60px;
   &:last-child {
@@ -115,14 +123,31 @@ line-height: 30px;
   }
 }
 
+.close-hamburger {
+	position: fixed;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  width: 1.25rem;
+	height: 1.25rem;
+	z-index: 10;
+	right: 3.125rem;
+	opacity: 0;
+  &:hover {
+    transform: scale(1.2);
+    transition: 0.1s;
+  }
+}
 
 
-.header-menu__link {
+
+.hamburger-menu__link {
   @include tablets {
     display: flex;
   }
   position: relative;
   height: 20px;
+  width: 30px;
   align-items: center;
   display: none;
   &:hover {
@@ -130,14 +155,14 @@ line-height: 30px;
   }
 }
 
-.header-menu__link__bars {
+.hamburger-menu__link__bars {
 		background: #414c63;
 		width: 24px;
 		height: 5px;
   display: block;
 	}
 
-  .header-menu__link__bars:before {
+  .hamburger-menu__link__bars:before {
   background: #414c63;
   width: 24px;
   height: 4px;
@@ -147,7 +172,7 @@ line-height: 30px;
   top: 0;
 }
 
-.header-menu__link__bars:after {
+.hamburger-menu__link__bars:after {
   background: #414c63;
   width: 24px;
   height: 4px;
@@ -158,38 +183,40 @@ line-height: 30px;
 }
 
 
-
-.header-menu {
-  width: 24px;
-  height: 45px;
-	vertical-align: middle;
-	position: relative;
-	height: 25px;
-}
-
-.close-button {
-  opacity: 0;
-}   
-
-
-.cross-image {
+.Cross-icon {
   width: 20px;
   height: 20px;
+  fill: #464d62;
 }
 
-.menuActive {
+.menu-active {
   @include tablets {
-	width: 40%;
-	position: fixed;
-	z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items:baseline;
+	width: 42%;
+  position: fixed;
+  padding-left: 50px;
+	z-index: 10;
 	top: 0;
 	right: 0;
 	bottom: 0;
-	overflow: hidden;
-	transition: 0.5s;
-	align-items: center;
+  overflow: hidden;
+  height: 100%;
+	transition: 0.2s;
+	align-items: baseline;
 	justify-content: center;
 	background-color: #fff;
-	}
+  }
+  @include medium {
+    width: 50%;
+  }
+  @include small {
+    width: 60%;
+  }
+  @include iphone {
+    width: 100%;
+  }
 }
+
 
