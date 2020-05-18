@@ -7,27 +7,25 @@
 }
 
 .reviews-container {
-  @include small {
+  @include medium {
+    justify-content: center;
     align-items: center;
   }
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  height: 450px;
+  min-height: 550px;
   margin: 0 auto;
   align-items: flex-start;
 }
 
 .reviews {
-  height: 370px;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  padding-top: 40px;
 }
 
 .reviews-wrap {
-  @include small {
+  @include medium {
     flex-direction: column;
     text-align: center;
     margin-bottom: 25px;
@@ -39,8 +37,7 @@
       margin-right: 25px;
       font-size: 22px;
     }
-    @include small {
-      font-size: 19px;
+    @include medium {
       margin-bottom: 25px;
     }
     @include phones {
@@ -51,7 +48,7 @@
 }
 
 
-.reviews__button {
+.reviews__button-left, .reviews__button-right  {
   width: 45px;
   height: 45px;
   border: 1px solid;
@@ -62,6 +59,20 @@
     background: #fff;
     transition: 0.3s;
   }
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.no-active {
+  width: 45px;
+  height: 45px;
+  border: 1px solid;
+  border-radius: 50%;
+  color: #ccc;
+  background: none;
+  margin-right: 27px;
+  cursor: default;
   &:last-child {
     margin-right: 0;
   }
@@ -79,40 +90,41 @@ transform: rotate(180deg);
   }
 
 
-.reviews__slider-wrap {
+.reviews__slider {
+  width: 65%;
   display: flex;
-  justify-content: flex-end;
-  @include small {
-    width: 200%;
-    justify-content: center;
-  }
+ overflow: hidden;
+
 }
 
-.slide {
+.slider__list {
+  display: flex;
+  position: relative;
+  will-change: right;
+  transition: right 0.8s;
+}
+
+.slider__item {
   @include tablets {
     margin-right: 23px;
   }
   @include small {
-    width: 100%;
-    overflow: hidden;
-    justify-content: center;
-    padding-left: 10px;
+    padding-left: 50px;
   }
   &-left {
     @include small {
-    width: 0;
-    margin-right: 0;
+    display: none;
     }
     margin-right: 20px;
   }
-  max-width: 430px;
   display: flex;
-  margin-right: 70px;
-  &:last-child {
-    margin-right: 0;
-  }
+  margin-right: 50px;
+  width: 440px;
+  
   &__content {
-    max-width: 323px;
+    @include small {
+      align-items: center;
+    }
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -120,6 +132,9 @@ transform: rotate(180deg);
       display: flex;
     }
     &-text {
+      @include small {
+        padding: 0px 40px 0px 40px;
+      }
       opacity: 0.5;
 color: #464d62;
 font-family: "Open Sans";
@@ -127,6 +142,7 @@ font-size: 16px;
 font-weight: 400;
 line-height: 25px;
 margin-bottom: 25px;
+padding-right: 50px;
     }
   }
 }
@@ -171,7 +187,6 @@ display: block;
 font-family: "Open Sans";
 font-size: 18px;
 font-weight: 700;
-line-height: 48px;
 }
 
 .user-Prof  {

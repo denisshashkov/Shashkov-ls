@@ -3,19 +3,19 @@
                .reviews-wrap__title
                   h2 Что обо мне говорят 
                .reviews-wrap__buttons
-                button.reviews__button
+                button.reviews__button-left
                   +icon(`slidearow`, 'arow__left')
-                button.reviews__button  
+                button.reviews__button-right  
                   +icon(`slidearow`, 'arow__right')    
               .reviews__slider
-                .reviews__slider-wrap
-                  .slide
-                     .slide-left
+                ul.slider__list
+                  li.slider__item
+                     .slider__item-left
                       +icon(`quote`, 'quote-image')
-                     .slide__content
-                      .slide__content-text
+                     .slider__item__content
+                      .slider__item__content-text
                         p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-                      .slide__content-user
+                      .slider__item__content-user
                         .avatar-reviews
                           +image('content/dima2.png', 'avatar-reviews-image')
                         .user-wrap  
@@ -24,17 +24,35 @@
                          .user-Prof  
                            span Основатель LoftSchool
 
-                  .slide
-                     .slide-left                   
+                  li.slider__item
+                     .slider__item-left                   
                        +icon(`quote`, 'quote-image')
-                     .slide__content
-                      .slide__content-text
+                     .slider__item__content
+                      .slider__item__content-text
                         p Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
-                      .slide__content-user
+                      .slider__item__content-user
                         .avatar-reviews
                           +image('content/vladimir3.png', 'avatar-reviews-image')
                         .user-wrap  
                           .user-name
                             span Владимир Сабанцев
                           .user-Prof  
-                            span Преподаватель    
+                            span Преподаватель         
+
+                  li.slider__item
+                     .slider__item-left                   
+                       +icon(`quote`, 'quote-image')
+                     .slider__item__content
+                      .slider__item__content-text
+                        p Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
+                      .slider__item__content-user
+                        .avatar-reviews
+                          +image('content/user.jpg', 'avatar-reviews-image')
+                        .user-wrap  
+                          .user-name
+                            span Владимир Астаханов
+                          .user-Prof  
+                            span Преподаватель         
+                  
+
+                                 
