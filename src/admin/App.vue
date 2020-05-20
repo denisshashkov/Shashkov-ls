@@ -23,11 +23,10 @@ export default {
   components: {
     headline,
     user,
-    tabs
-  }
+    tabs,
+  },
 };
 </script>
-
 
 <style lang="pcss">
 @import "./default.pcss";

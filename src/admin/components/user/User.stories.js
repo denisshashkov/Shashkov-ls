@@ -1,6 +1,8 @@
 import user from "./user.vue";
 import "../../default.pcss";
-import { bgDecorator } from "../../../../.storybook/decorators"
+import {
+  bgDecorator
+} from "../../../../.storybook/decorators"
 
 function bg() {
   return {
@@ -16,11 +18,13 @@ function bg() {
 
 export default {
   title: "User",
-  decorators: [ bgDecorator ],
+  decorators: [bgDecorator],
 };
 
 export const Default = () => ({
-  components: { user },
+  components: {
+    user
+  },
   template: `
     <user
       name="Владимир Астаханов" 

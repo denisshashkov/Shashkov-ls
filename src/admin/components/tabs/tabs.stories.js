@@ -1,6 +1,10 @@
 import tabs from "./tabs";
-import { bgDecorator } from "../../../../.storybook/decorators";
-import { action } from '@storybook/addon-actions';
+import {
+  bgDecorator
+} from "../../../../.storybook/decorators";
+import {
+  action
+} from '@storybook/addon-actions';
 
 const methods = {
   onChange: action("onChange")
@@ -12,7 +16,9 @@ export default {
 };
 
 export const defaultView = () => ({
-  components: { tabs },
+  components: {
+    tabs
+  },
   methods,
   template: `
     <tabs 

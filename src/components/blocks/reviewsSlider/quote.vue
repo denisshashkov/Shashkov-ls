@@ -10,19 +10,18 @@
 </template>
 
 <script>
-  import user from './user.vue';
-  import svgIcon from './svg-icons/svg-icons.vue';
+import user from "./user.vue";
+import svgIcon from "./svg-icons/svg-icons.vue";
 
-  export default {
-    props: {
-      review: {
-        type: Object
-      }
+export default {
+  props: {
+    review: {
+      type: Object,
     },
-    components: {
-      user,
-      svgIcon
-    }
-  }
-</script>  
-
+  },
+  components: {
+    user,
+    svgIcon,
+  },
+};
+</script>

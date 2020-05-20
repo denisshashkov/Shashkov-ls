@@ -2,10 +2,12 @@ html {
   @include desktop {
     font-size: 15px;
   }
+
   @include tablets {
     font-size: 14px;
   }
 }
+
 body,
 html {
   height: 100%;
@@ -30,12 +32,14 @@ body {
   margin: 0 auto;
   max-width: 1480px;
   width: 95%;
-   @include desktop {
-     max-width: 1080px;
-   }
-   @include tablets {
-     max-width: 740px;
-   }
+
+  @include desktop {
+    max-width: 1080px;
+  }
+
+  @include tablets {
+    max-width: 740px;
+  }
 
   @include phones {
     width: 85%;

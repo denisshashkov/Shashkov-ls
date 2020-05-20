@@ -7,39 +7,39 @@
 </template>
 
 <script>
-  import Btn from './button.vue'
+import Btn from "./button.vue";
 
-  export default {
-    props: {
-      hasPrevious: {
-        type: Boolean,
-        default: true
-      },
-      hasNext: {
-        type: Boolean,
-        default: true
-      }
+export default {
+  props: {
+    hasPrevious: {
+      type: Boolean,
+      default: true,
     },
-    components: {
-      Btn
-    }
-  }
-</script>  
+    hasNext: {
+      type: Boolean,
+      default: true,
+    },
+  },
+  components: {
+    Btn,
+  },
+};
+</script>
 
 <style lang="postcss">
-  .controls {
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__item {
     display: flex;
     justify-content: center;
     align-items: center;
-
-    &__item {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    &__item + &__item {
-      margin-left: 1rem;
-    }
   }
-</style>  
+
+  &__item + &__item {
+    margin-left: 1rem;
+  }
+}
+</style>

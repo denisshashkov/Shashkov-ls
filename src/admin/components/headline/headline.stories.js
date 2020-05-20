@@ -1,5 +1,7 @@
 import headline from "./headline";
-import { action } from "@storybook/addon-actions";
+import {
+  action
+} from "@storybook/addon-actions";
 
 const methods = {
   onLogout: action("onLogout"),

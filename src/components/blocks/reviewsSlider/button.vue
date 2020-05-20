@@ -13,152 +13,132 @@
 </template>
 
 <script>
-  import SvgIcon from './svg-icons/svg-icons.vue';
+import SvgIcon from "./svg-icons/svg-icons.vue";
 
-  export default {
-    props: {
-      color: {
-        type: String,
-        default: "dark",
-        validator: value => ['dark'].includes(value)
-      },
-      size: {
-        type: String,
-        default: "medium",
-        validator: value => ['medium'].includes(value)
-      },
-      icon: {
-        type: String,
-        default: "",
-        validator: value => [
-          '',
-          'arrow-left',
-          'arrow-right',
-          'arrow-up',
-          'arrow-down',
-        ].includes(value)
-      },
-      iconStart: {
-        type: String,
-        default: "",
-        validator: value => [
-          '',
-          'arrow-left',
-          'arrow-right',
-          'arrow-up',
-          'arrow-down',
-        ].includes(value)
-      },
-      iconEnd: {
-        type: String,
-        default: "",
-        validator: value => [
-          '',
-          'arrow-left',
-          'arrow-right',
-          'arrow-up',
-          'arrow-down',
-        ].includes(value)
-      },
-      type: {
-        type: String,
-        default: 'button',
-        validator: value => ['button', 'submit', 'reset'].includes(value)
-      },
-      onlyIcon: {
-        type: Boolean,
-        default: false
-      },
-      rounded: Boolean,
-      plain: Boolean,
-      disabled: Boolean
-   },
-   components: {
-     SvgIcon
-   },
-   computed: {
-     classes () {
-       const classes = [
-         'btn'
+export default {
+  props: {
+    color: {
+      type: String,
+      default: "dark",
+      validator: (value) => ["dark"].includes(value),
+    },
+    size: {
+      type: String,
+      default: "medium",
+      validator: (value) => ["medium"].includes(value),
+    },
+    icon: {
+      type: String,
+      default: "",
+      validator: (value) =>
+        ["", "arrow-left", "arrow-right", "arrow-up", "arrow-down"].includes(
+          value
+        ),
+    },
+    iconStart: {
+      type: String,
+      default: "",
+      validator: (value) =>
+        ["", "arrow-left", "arrow-right", "arrow-up", "arrow-down"].includes(
+          value
+        ),
+    },
+    iconEnd: {
+      type: String,
+      default: "",
+      validator: (value) =>
+        ["", "arrow-left", "arrow-right", "arrow-up", "arrow-down"].includes(
+          value
+        ),
+    },
+    type: {
+      type: String,
+      default: "button",
+      validator: (value) => ["button", "submit", "reset"].includes(value),
+    },
+    onlyIcon: {
+      type: Boolean,
+      default: false,
+    },
+    rounded: Boolean,
+    plain: Boolean,
+    disabled: Boolean,
+  },
+  components: {
+    SvgIcon,
+  },
+  computed: {
+    classes() {
+      const classes = ["btn"];
 
-       ];
+      if (this.onlyIcon && this.rounded) {
+        classes.push("btn--rounded");
+      }
 
-       if (this.onlyIcon && this.rounded) {
-         classes.push('btn--rounded')
-       }
+      if (this.onlyIcon && this.size) {
+        classes.push(`btn--${this.size}`);
+      }
 
-       if (this.onlyIcon && this.size) {
-         classes.push(`btn--${this.size}`)
-       }
+      if (this.icon || this.iconStart || this.iconEnd) {
+        const icon = this.icon || this.iconStart || this.iconEnd;
 
-       if (this.icon || this.iconStart || this.iconEnd) {
-         const icon = this.icon || this.iconStart || this.iconEnd
+        classes.push(`btn--${icon}`);
+      }
 
-         classes.push(`btn--${icon}`)
-       }
+      if (this.plain) {
+        classes.push("btn--plain");
+      }
 
-       if (this.plain) {
-         classes.push('btn--plain')
-       }
-
-       return classes.join(" ");
-     },
-     showText() {
-       return !this.onlyIcon && !!this.$slots.default;
-     }
-   }
-  }
+      return classes.join(" ");
+    },
+    showText() {
+      return !this.onlyIcon && !!this.$slots.default;
+    },
+  },
+};
 </script>
 
-<style lang='postcss'>
-
-
+<style lang="postcss">
 .btn {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0;
-  margin:0;
-  transition: color .3s ease-in;
+  margin: 0;
+  transition: color 0.3s ease-in;
   border: 1px solid currentColor;
   padding: 8px 15px;
 
   & {
-    .btn__icon  + .btn__text,
+    .btn__icon + .btn__text,
     .btn__text + .btn__icon {
-      margin-left: .5rem;
+      margin-left: 0.5rem;
     }
   }
 
   &__icon {
     display: flex;
     position: relative;
-    width: 8px;
+    width: 10px;
     height: auto;
+    justify-content: center;
   }
 }
 
+&:disabled {
+  border-color: rgba(currentColor, 0.9);
+  cursor: unset;
 
-
-
-
-  &:disabled {
-    border-color: rgba(currentColor, .9);
-    cursor: unset;
-
-    & .btn__icon {
-      color: rgba(currentColor, .9);
-    }
+  & .btn__icon {
+    color: rgba(currentColor, 0.9);
   }
-
-
+}
 
 .btn {
   &--colorDark {
     color: #414b63;
   }
 }
-
 
 .btn {
   &--plain {

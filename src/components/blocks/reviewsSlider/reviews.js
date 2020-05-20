@@ -26,12 +26,12 @@ new Vue({
   },
   created() {
     axios.get('https://webdev-api.loftschool.com/reviews/174')
-    .then(reviews => {
-      return reviews.data.map(review => {
-        return (review.photo = 'https://webdev-api.loftschool.com' + review.photo) && review
-      });
-    })
-    .then(reviews => this.reviews = reviews);
+      .then(reviews => {
+        return reviews.data.map(review => {
+          return (review.photo = 'https://webdev-api.loftschool.com/' + review.photo) && review
+        });
+      })
+      .then(reviews => this.reviews = reviews);
   },
   mounted() {
     this.$eventBus.$on('activePage', number => {

@@ -4,6 +4,6 @@
 </template>
 <script>
 export default {
-  props: ["categories"] 
-}
+  props: ["categories"],
+};
 </script>

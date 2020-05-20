@@ -5,56 +5,53 @@
     :paginationEnabled="false"
     @pageChange="pageChange"
   ).reviews-carousel__list
-    slide(v-for="review in reviews" :key="review.id").reviews-carousel__item
+   slide(v-for="review in reviews" :key="review.id").reviews-carousel__item
     quote(:review="review")
 </template>
 
 <script>
-  import { Carousel, Slide } from 'vue-carousel';
-  import Quote from './quote.vue';
+import { Carousel, Slide } from "vue-carousel";
+import Quote from "./quote.vue";
 
-  export default {
-    components: {
-      Carousel,
-      Slide,
-      Quote
+export default {
+  components: {
+    Carousel,
+    Slide,
+    Quote,
+  },
+  props: {
+    reviews: {
+      type: Array,
+      default: [],
     },
-    props: {
-      reviews: {
-        type: Array,
-        default: []
-      }
+  },
+  data: () => ({
+    slidesPerPage: 2,
+  }),
+  watch: {
+    slidesPerPage() {
+      this.$eventBus.$emit("pages", this.pages);
     },
-    data: () => ({
-      slidesPerPage: 2
-    }),
-    watch: {
-      slidesPerPage() {
-        this.$eventBus.$emit('pages', this.pages);
-      },
-      reviews() {
-        this.$eventBus.$emit('pages', this.pages);
-        this.calcSlidesPerPage(this);
-      }
+    reviews() {
+      this.$eventBus.$emit("pages", this.pages);
+      this.calcSlidesPerPage(this);
     },
-    computed: {
-      pages() {
-        return Math.ceil((this.reviews.length - 1) / this.slidesPerPage);
-      },
+  },
+  computed: {
+    pages() {
+      return Math.ceil((this.reviews.length - 1) / this.slidesPerPage);
     },
-    methods: {
-      pageChange(number) {
-        this.$eventBus.$emit('activePage', number);
-      },
-      calcSlidesPerPage() {
-        this.slidesPerPage = (window.innerWidth <= 768) ? 1 : 2;
-      }
+  },
+  methods: {
+    pageChange(number) {
+      this.$eventBus.$emit("activePage", number);
     },
-    mounted() {
-      window.addEventListener('resize', this.calcSlidesPerPage);
-    }
-  };
-</script>  
-
-
-  
+    calcSlidesPerPage() {
+      this.slidesPerPage = window.innerWidth <= 768 ? 1 : 2;
+    },
+  },
+  mounted() {
+    window.addEventListener("resize", this.calcSlidesPerPage);
+  },
+};
+</script>

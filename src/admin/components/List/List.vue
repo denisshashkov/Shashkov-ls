@@ -9,17 +9,17 @@ import listPure from "../ListPure";
 export default {
   computed: {
     ...mapState("categories", {
-      categories: state => state.categories
-    })
+      categories: (state) => state.categories,
+    }),
   },
   components: {
-    listPure
+    listPure,
   },
   methods: {
-    ...mapActions("categories", ["fetchCategories"])
+    ...mapActions("categories", ["fetchCategories"]),
   },
   created() {
     this.fetchCategories();
-  }
+  },
 };
 </script>

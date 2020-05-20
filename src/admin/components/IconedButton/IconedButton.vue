@@ -7,9 +7,8 @@
 
 <script>
 export default {
-  props: ["title"]
+  props: ["title"],
 };
 </script>
 
-<style lang="postcss" scoped>
-</style>
+<style lang="postcss" scoped></style>

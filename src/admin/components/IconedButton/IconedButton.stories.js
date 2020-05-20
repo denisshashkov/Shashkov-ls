@@ -1,6 +1,8 @@
 import iconedButton from "./IconedButton.vue";
 
-import { action } from "@storybook/addon-actions";
+import {
+  action
+} from "@storybook/addon-actions";
 
 const methods = {
   onClick: action("onClick"),
@@ -10,7 +12,9 @@ export default {
 };
 
 export const defaultView = () => ({
-  components: { iconedButton },
+  components: {
+    iconedButton
+  },
   methods,
   template: `
     <iconedButton

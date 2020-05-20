@@ -16,21 +16,21 @@
 const tabs = [
   { id: 0, title: "Обо мне", link: "/about" },
   { id: 1, title: "Работы", link: "/works" },
-  { id: 2, title: "Отзывы", link: "/reviews" }
+  { id: 2, title: "Отзывы", link: "/reviews" },
 ];
 export default {
   data() {
     return {
       tabs,
-      activeTabId: 0
+      activeTabId: 0,
     };
   },
   methods: {
     changeTab(tab) {
       this.activeTabId = tab.id;
       this.$emit("change", tab);
-    }
-  }
+    },
+  },
 };
 </script>
 
