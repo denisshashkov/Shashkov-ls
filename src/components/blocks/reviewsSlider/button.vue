@@ -30,26 +30,17 @@ export default {
     icon: {
       type: String,
       default: "",
-      validator: (value) =>
-        ["", "arrow-left", "arrow-right", "arrow-up", "arrow-down"].includes(
-          value
-        ),
+      validator: (value) => ["", "arrow-left", "arrow-right"].includes(value),
     },
     iconStart: {
       type: String,
       default: "",
-      validator: (value) =>
-        ["", "arrow-left", "arrow-right", "arrow-up", "arrow-down"].includes(
-          value
-        ),
+      validator: (value) => ["", "arrow-left", "arrow-right"].includes(value),
     },
     iconEnd: {
       type: String,
       default: "",
-      validator: (value) =>
-        ["", "arrow-left", "arrow-right", "arrow-up", "arrow-down"].includes(
-          value
-        ),
+      validator: (value) => ["", "arrow-left", "arrow-right"].includes(value),
     },
     type: {
       type: String,

@@ -3,7 +3,7 @@
   margin-bottom: 41px;
 
   @include desktop {
-    background: url('../images/content/2.png')no-repeat;
+    background: url("../images/content/2.png") no-repeat;
     background-position-y: 22%;
     background-position-x: 68%;
   }
@@ -17,7 +17,7 @@
     background: none;
   }
 
-  background: url('../images/content/4.png')no-repeat;
+  background: url("../images/content/4.png") no-repeat;
   background-position-x: 69%;
   background-position-y: 44%;
 }
@@ -37,7 +37,6 @@
 
   margin-bottom: 80px;
 }
-
 
 .works-slider {
   display: flex;
@@ -109,7 +108,6 @@
   bottom: 0;
   width: 178px;
 
-
   @include phones {
     display: none;
   }
@@ -129,7 +127,7 @@
   }
 
   height: 100px;
-  transition: .2s;
+  transition: 0.2s;
 
   &.active,
   &:hover {
@@ -161,10 +159,11 @@
   background: #2d3c4e;
   display: block;
   position: relative;
-
   &:before {
     content: "";
-    background: svg-load('arrow-down.svg', fill=#fff, width=100%, height=100%) center center no-repeat;
+    background: svg-load("arrow-down.svg", fill=#fff, width=100%, height=100%)
+      center center no-repeat;
+
     display: block;
     width: 8px;
     height: 10px;
@@ -172,28 +171,24 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) rotate(-90deg);
-    transition: opacity .3s, margin-top .3s;
-    opacity: .3;
+    transition: opacity 0.3s, margin-top 0.3s;
+    opacity: 0.3;
   }
-
   &:hover {
     &:before {
       opacity: 1;
     }
   }
-
   &_prev {
     &:before {
       transform: translate(-50%, -50%) rotate(-270deg);
     }
-
     &:active {
       &:before {
         margin-top: 3px;
       }
     }
   }
-
   &_next {
     &:active {
       &:before {
@@ -238,7 +233,7 @@
   width: 83px;
   height: 45px;
   border-radius: 23px;
-  background-color: rgba(95, 96, 98, .1);
+  background-color: rgba(95, 96, 98, 0.1);
   position: relative;
   margin-right: 15px;
 
@@ -298,7 +293,6 @@
   margin-bottom: 40px;
 }
 
-
 .works-slider__desc {
   margin-bottom: 38px;
 }
@@ -324,19 +318,18 @@
 }
 
 .iconed-link::before {
-  content: '';
+  content: "";
   display: block;
   width: 17px;
   height: 17px;
-  background: url('../images/content/link.png')no-repeat;
+  background: url("../images/content/link.png") no-repeat;
 
   margin-right: 15px;
-
 }
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: .3s;
+  transition: 0.3s;
   position: absolute;
   top: 0;
   left: 0;

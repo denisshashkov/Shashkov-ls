@@ -1,5 +1,7 @@
 import headline from "./headline.vue";
-import { shallowMount } from "@vue/test-utils";
+import {
+  shallowMount
+} from "@vue/test-utils";
 
 it("сохраняет структуру", async () => {
   const component = shallowMount(headline);

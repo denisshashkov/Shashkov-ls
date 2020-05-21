@@ -9,7 +9,7 @@ export default {
       type: String,
       default: "user-full",
       validator: (value) =>
-        ["arrow-left", "arrow-right", "user-full"].includes(value),
+        ["arrow-left", "arrow-right", "quote", "user-full"].includes(value),
     },
   },
   components: {

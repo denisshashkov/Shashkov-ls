@@ -55,3 +55,52 @@ export default {
   },
 };
 </script>
+
+<style lang="postcss">
+@import "../../../styles/mixins.pcss";
+
+.reviews-carousel__list {
+  display: flex;
+  will-change: transform;
+  transition: transform 0.3s;
+  max-width: 1000px;
+  height: 100%;
+  margin-left: 2.5%;
+
+  @include phones {
+    &:before {
+      content: "";
+      width: 30px;
+      height: 26px;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: -40px;
+      background: svg-load("quote.svg", fill=rgba($text-color, 0.05)) center
+        center / contain no-repeat;
+    }
+  }
+}
+
+.reviews-carousel__item {
+  flex-shrink: 0;
+  padding-right: 40px;
+  width: 50%;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  @include tablets {
+    padding-right: 20px;
+  }
+
+  @include phones {
+    padding-right: 0;
+  }
+}
+
+.VueCarousel-navigation {
+  display: none;
+}
+</style>
