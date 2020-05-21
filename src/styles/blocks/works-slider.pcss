@@ -159,11 +159,13 @@
   background: #2d3c4e;
   display: block;
   position: relative;
+
   &:before {
     content: "";
-    background: svg-load("arrow-down.svg", fill=#fff, width=100%, height=100%)
-      center center no-repeat;
-
+    background: svg-load("../../images/icons/arrow-down.svg",
+        fill=#fff,
+        width=100%,
+        height=100%) center center no-repeat;
     display: block;
     width: 8px;
     height: 10px;
@@ -174,21 +176,25 @@
     transition: opacity 0.3s, margin-top 0.3s;
     opacity: 0.3;
   }
+
   &:hover {
     &:before {
       opacity: 1;
     }
   }
+
   &_prev {
     &:before {
       transform: translate(-50%, -50%) rotate(-270deg);
     }
+
     &:active {
       &:before {
         margin-top: 3px;
       }
     }
   }
+
   &_next {
     &:active {
       &:before {

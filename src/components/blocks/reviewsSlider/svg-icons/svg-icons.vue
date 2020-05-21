@@ -13,10 +13,10 @@ export default {
     },
   },
   components: {
-    Quote: () => import("./icons/quote.vue"),
-    UserFull: () => import("./icons/user-full.vue"),
-    ArrowRight: () => import("./icons/arrow-right.vue"),
-    ArrowLeft: () => import("./icons/arrow-left.vue"),
+    Quote: () => import("./icon/quote.vue"),
+    UserFull: () => import("./icon/user-full.vue"),
+    ArrowRight: () => import("./icon/arrow-right.vue"),
+    ArrowLeft: () => import("./icon/arrow-left.vue"),
   },
   computed: {
     SvgIcon() {
