@@ -1,0 +1,24 @@
+section.about
+                .container.about__container
+                  .about__left
+                    .user
+                      .avatar.user__avatar
+                        +image("content/user.jpg", "avatar__pic")
+                    .user__desc
+                        - 
+                          var userdata = [
+                            ['Проживаю:', 'Новосибирск'],
+                            ['Возраст:', '27 лет'],
+                            ['Родился:', '1 января 1991'],
+                          ]
+                        table.user-info__data
+                          tbody.user-info__data-body
+                            each row in userdata
+                              tr
+                                td.first-row #{row[0]}
+                                td.second-row #{row[1]}
+                  .about__right
+                    h4.about__prolog Привет, меня зовут
+                    h2.about__title Владимир Астаханов
+                    .about__text Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                    .about__ps Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!

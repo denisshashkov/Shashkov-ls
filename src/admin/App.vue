@@ -1,3 +1,69 @@
 <template lang="pug">
-  h1 Welcome to the Vue App
+  div.root-wrapper-container
+    div.root-container
+      template
+        header.header-container
+          headline()
+            user(
+              name="Владимир Астаханов"
+              :pic="`${require('../images/content/user.jpg')}`"
+            )
+
+        section.tabs-container
+          tabs
+        main.content-container
+          router-view
 </template>
+
+<script>
+import headline from "./components/headline";
+import user from "./components/user";
+import tabs from "./components/tabs";
+export default {
+  components: {
+    headline,
+    user,
+    tabs,
+  },
+};
+</script>
+
+<style lang="pcss">
+@import "./default.pcss";
+button {
+  border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
+  border-style: solid;
+  border-width: 1px;
+  background-color: buttonface;
+}
+.root-wrapper-container {
+  height: 100%;
+}
+.root-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.admin-wrapper {
+  display: flex;
+  .maincontent {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+}
+.content-container {
+  background: url("~images/content/admin.png") center center no-repeat / cover;
+  flex: 1;
+  padding-top: 60px;
+  @include phones {
+    padding-top: 30px;
+  }
+}
+.page-title {
+  margin-bottom: 60px;
+  font-size: 21px;
+  font-weight: bold;
+}
+</style>

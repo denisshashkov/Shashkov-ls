@@ -10,11 +10,38 @@
   }
 }
 
+@mixin ipad-pro {
+  @media screen and (max-width: 1024px) {
+    @content;
+  }
+}
+
 @mixin tablets() {
   @media screen and (max-width: $bp-tablets) {
     @content;
   }
 }
+
+@mixin medium {
+  @media screen and (max-width: 580px) {
+    @content;
+  }
+}
+
+@mixin small {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin iphone {
+  @media screen and (max-width: 414px) {
+    @content;
+  }
+}
+
+
+
 
 @mixin phones() {
   @media screen and (max-width: $bp-phones) {

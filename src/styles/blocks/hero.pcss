@@ -1,9 +1,24 @@
 .hero {
-  min-height: 900px;
+  @include tablets {
+    padding-bottom: 200px;
+  }
+
+  @include small {
+    justify-content: flex-start;
+    height: 100%;
+    padding: 0;
+    margin-bottom: 120px;
+  }
+
   height: 100vh;
   display: flex;
-  flex-direction: column;
   flex: 1;
+  padding-bottom: 250px;
+  position: relative;
+}
+
+.hero-container {
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  padding-bottom: 60px;
 }

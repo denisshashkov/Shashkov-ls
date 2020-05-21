@@ -4,14 +4,57 @@
 
 .form-section {
   min-height: 650px;
+  position: relative;
 }
 
 
 .form-title {
+  @include tablets {
+    text-align: center;
+    font-size: 23px;
+    margin-bottom: 60px;
+  }
+
+  @include small {
+    font-size: 20px;
+  }
+
+  @include phones {
+    font-size: 18px;
+  }
+
   margin-bottom: 70px;
 }
 
+.form-wrap {
+  @include tablets {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @include iphone {
+    text-align: center;
+  }
+}
+
 .form__input {
+  @include tablets {
+    width: 333px;
+  }
+
+  @include medium {
+    width: 260px;
+  }
+
+  @include small {
+    width: 320px;
+  }
+
+  @include iphone {
+    width: 300px;
+  }
+
   position: relative;
   padding:5px 5px 5px 40px;
   width: 377px;
@@ -31,28 +74,56 @@
 }
 
 .form-icon {
+  @include iphone {
+    opacity: 0;
+  }
+
   margin-bottom: -40px;
 }
 
 .form__block {
+  @include tablets {
+    margin-right: 20px;
+  }
+
+  @include iphone {
+    margin-right: 0;
+  }
+
   display: flex;
   flex-direction: column;
   margin-right: 85px;
+
+  &:first-child {
+    @include iphone {
+      margin-bottom: 30px;
+    }
+  }
+
   &:last-child {
     margin-right: 0;
   }
+
   &-title {
+    @include iphone {
+      padding: 0;
+    }
+
     opacity: 0.5;
-color: #464d62;
-font-size: 16px;
-font-weight: 400;
-line-height: 30px;
-margin-bottom: 10px;
-padding-left: 40px;
+    color: #464d62;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 30px;
+    margin-bottom: 10px;
+    padding-left: 40px;
   }
 }
 
 .form__row {
+  @include small {
+    flex-direction: column;
+  }
+
   display: flex;
   margin-bottom: 40px;
 }
@@ -62,7 +133,23 @@ padding-left: 40px;
   flex-direction: column;
 }
 
-.form__input-textarea  {
+.form__input-textarea {
+  @include tablets {
+    width: 687px;
+  }
+
+  @include medium {
+    width: 540px;
+  }
+
+  @include small {
+    width: 330px;
+  }
+
+  @include iphone {
+    width: 310px;
+  }
+
   position: relative;
   padding:10px 40px 10px 40px;
   width: 840px;
@@ -76,15 +163,22 @@ padding-left: 40px;
 }
 
 .btn-submit {
-width: 347px;
-height: 80px;
-border-radius: 40px 5px;
-color: #ffffff;
-font-family: "Open Sans";
-font-size: 18px;
-font-weight: 600;
-background-image: linear-gradient(to right, #9300e8 0%, #4a00ed 100%);
-&:hover {
-background-image: linear-gradient(to left, #bb00ff 0%, #5900ff 100%);
-}
+  @include small {
+    width: 259px;
+    height: 60px;
+    border-radius: 30px 0;
+  }
+
+  width: 347px;
+  height: 80px;
+  border-radius: 40px 5px;
+  color: #ffffff;
+  font-family: "Open Sans";
+  font-size: 18px;
+  font-weight: 600;
+  background-image: linear-gradient(to right, #9300e8 0%, #4a00ed 100%);
+
+  &:hover {
+    background-image: linear-gradient(to left, #bb00ff 0%, #5900ff 100%);
+  }
 }

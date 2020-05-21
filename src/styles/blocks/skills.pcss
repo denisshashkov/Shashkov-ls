@@ -2,63 +2,133 @@
   @include tablets {
     padding: 0;
   }
+
   display: flex;
   flex-direction: column;
- padding-left: 100px;
+  padding-left: 40px;
 }
-  
+
+.values__widget-container {
+  @include tablets {
+    padding: 0;
+  }
+
+  display: flex;
+  flex-direction: column;
+}
+
+
 .skill {
-  width: 140px;
-  height: 140px;
+  width: 120px;
+  height: 120px;
   position: relative;
-}  
-  
-.user-skills__item{
+}
+
+.user-skills__item {
   list-style: none;
   margin-bottom: 45px;
+
   &:last-child {
     margin-bottom: 0;
   }
-}  
+}
+
+.skills-row__item {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.skill__title {
+  opacity: 0.5;
+  color: #464d62;
+  font-family: "Open Sans";
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%)
+}
+
+circle:nth-child(2) {
+  transform: rotate(180deg);
+  transform-origin: 50% 50%;
+  animation: skillProgress 100s linear infinite;
+  animation-play-state: paused;
+}
 
 
 
-  .skill__title {
-    opacity: 0.5;
-color: #464d62;
-font-family: "Open Sans";
-font-size: 16px;
-font-weight: 700;
-text-transform: uppercase;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%)
+.skills-row__title {
+  @include small {
+    text-align: center;
   }
 
-  circle:nth-child(2) {
-    transform: rotate(180deg);
-    transform-origin: 50% 50%;
-    animation: skillProgress 100s linear infinite;
-    animation-play-state: paused;
-  }
-  
-  .skills-row__list {
-    display: flex;
-    justify-content: flex-start;
+  margin-bottom: 30px;
+}
+
+
+
+
+.skills-row__title {
+  margin-bottom: 26px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.skills-row__list {
+  @include small {
+    justify-content: center;
   }
 
-  .skills-row__title {
-    margin-bottom: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+}
+
+
+
+
+
+.skills__item {
+  margin-bottom: 30px;
+}
+
+
+.skill {
+  position: relative;
+  width: 134px;
+  height: 134px;
+}
+
+.skill__circle {
+  fill: transparent;
+
+  &_under {
+    stroke: #eaeaea;
+    stroke-width: 5px;
   }
 
-  @keyframes skillProgress {
-    0% {
-      stroke-dashoffset: 502;
-    }
-    100% {
-      stroke-dashoffset: 0;
-    }
+  &_above {
+    stroke-width: 12px;
+    stroke-dasharray: 251;
+    stroke-dashoffset: 100;
   }
+}
 
-  
+.skill__circle-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  font-size: 16px;
+  color: rgba($text-color, .5);
+  padding: 14px;
+
+  @include phones {
+    font-size: 16px;
+  }
+}
