@@ -7,5 +7,5 @@ import "./scripts/skills";
 import "./scripts/parallax";
 import "./scripts/slider";
 import "./scripts/menu";
-import "./scripts/validations";
+import "./components/blocks/form/validations";
 import "./components/blocks/reviewsSlider/reviews";

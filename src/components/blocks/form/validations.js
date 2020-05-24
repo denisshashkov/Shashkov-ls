@@ -31,12 +31,9 @@ new Vue({
   },
   methods: {
     submit: function () {
-      this.$validate()
-        .then(function (success) {
-          if (success) {
-            alert("Validation succeeded!");
-          }
-        });
+      if (this.$validate()) {
+        console.log('Валидация прошла успешно!!!')
+      }
     },
   }
 })
