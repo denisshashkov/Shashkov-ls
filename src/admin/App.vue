@@ -1,6 +1,6 @@
 <template lang="pug">
-  div.root-wrapper-container
-    div.root-container
+  .root-wrapper-container
+    .root-container
       template
         header.header-container
           headline()
@@ -8,11 +8,12 @@
               name="Владимир Астаханов"
               :pic="`${require('../images/content/user.jpg')}`"
             )
-
-        section.tabs-container
-          tabs
+        section.tabs-container-wrap
+          .tabs-container
+            tabs
         main.content-container
-          router-view
+          .about-container
+            router-view
 </template>
 
 <script>
@@ -53,6 +54,15 @@ button {
     min-height: 100vh;
   }
 }
+
+.header-container {
+  background-image: linear-gradient(to top, #3e3e59, #454573);
+  width: 100%;
+  height: 80px;
+  align-items: center;
+  display: flex;
+}
+
 .content-container {
   background: url("~images/content/admin.png") center center no-repeat / cover;
   flex: 1;
@@ -65,5 +75,27 @@ button {
   margin-bottom: 60px;
   font-size: 21px;
   font-weight: bold;
+}
+
+.tabs-container {
+  max-width: 1080px;
+  margin:0 auto;
+  width: 95%;
+
+&-wrap {
+height: 77px;
+background-color: #ffffff;
+width: 100%;
+}
+}
+
+.content-container {
+  background: url("~images/content/admin-back.png")center center/cover;
+}
+
+.about-container {
+  max-width: 1090px;
+  margin: 0 auto;
+  width: 95%;
 }
 </style>

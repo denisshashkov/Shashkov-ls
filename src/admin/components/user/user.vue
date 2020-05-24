@@ -15,13 +15,14 @@ export default {
 .user-component {
   display: flex;
   align-items: center;
+  margin-right: 25px;
 }
 .avatar {
   border-radius: 50%;
   overflow: hidden;
   width: 50px;
   height: 50px;
-  margin-right: 10px;
+  margin-right: 15px;
 }
 .name {
   font-size: 18px;

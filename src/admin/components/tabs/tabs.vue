@@ -9,6 +9,7 @@
         button(
           type="button"
           @click="changeTab(tab)"
+          :class="{'active' : tab.id === activeTabId}"
         ).btn {{tab.title}}
 
 </template>
@@ -38,7 +39,6 @@ export default {
 .tabs {
   display: flex;
   height: 77px;
-  background: #fff;
 }
 .active {
   &:after {
@@ -48,17 +48,31 @@ export default {
     left: 0;
     right: 0;
     height: 4px;
-    background: red;
+    background: #383bcf;
+    width: 125px;
+    height: 3px;
   }
 }
 .tab {
   display: flex;
   position: relative;
+  justify-content: center;
+  width: 125px;
 }
 .btn {
   display: flex;
   flex-direction: column;
+  width: 100%;
   align-items: center;
   justify-content: center;
+  border: none;
+  color: #414c63;
+  font-family: "Open Sans";
+  font-weight: 400;
+  &.active {
+    color: #383bcf;
+    font-weight: 600;
+    transition: 0.3s;
+  }
 }
 </style>

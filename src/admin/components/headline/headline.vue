@@ -29,14 +29,20 @@ export default {
 
 <style lang="postcss" scoped>
 .headline-component {
-  padding: 20px;
-  background-image: linear-gradient(to top, #3e3e59, #454573);
-  display: flex;
   align-items: center;
-  color: #ffffff80;
+  display: flex;
+  max-width: 1080px;
+  margin: 0 auto;
+  width: 95%;
 }
 .desc {
   margin-left: 10px;
+  opacity: 0.5;
+  color: #ffffff;
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 34px;
 }
 .content {
   display: flex;
@@ -44,6 +50,16 @@ export default {
 }
 .logout {
   margin-left: auto;
-  color: inherit;
+  opacity: 0.7;
+  color: #ffffff;
+  font-family: "Open Sans";
+  font-size: 16px;
+  font-weight: 400;
+  border: none;
+  text-decoration: underline;
+  &:hover {
+    color: #ccc;
+    transition: 0.3s;
+  }
 }
 </style>
