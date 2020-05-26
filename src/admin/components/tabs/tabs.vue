@@ -1,16 +1,18 @@
 <template lang="pug">
-  .tabs-component
-    ul.tabs  
-      li.tab(
-        v-for="tab in tabs" 
-        :key="tab.id"
-        :class="{'active' : tab.id === activeTabId}"
-      )
-        button(
-          type="button"
-          @click="changeTab(tab)"
+section.tabs-container-wrap
+  .tabs-container           
+   .tabs-component
+      ul.tabs  
+        li.tab(
+          v-for="tab in tabs" 
+          :key="tab.id"
           :class="{'active' : tab.id === activeTabId}"
-        ).btn {{tab.title}}
+        )
+          button(
+            type="button"
+            @click="changeTab(tab)"
+            :class="{'active' : tab.id === activeTabId}"
+          ).btn {{tab.title}}
 
 </template>
 <script>
@@ -59,6 +61,18 @@ export default {
   justify-content: center;
   width: 125px;
 }
+
+.tabs-container {
+  max-width: 1080px;
+  margin: 0 auto;
+  width: 95%;
+  &-wrap {
+    height: 77px;
+    background-color: #ffffff;
+    width: 100%;
+  }
+}
+
 .btn {
   display: flex;
   flex-direction: column;

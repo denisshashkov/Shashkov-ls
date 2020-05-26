@@ -1,0 +1,233 @@
+<template lang="pug">
+.login
+      .login__content#formAdmin
+        form.login__form
+          .login__close
+            button(type="button").login__close-btn
+          .login__title-box
+            h1.login__title Авторизация
+          .form__wrapper
+            .form__row-admin           
+               label(for="input__username").form__block
+                span.form__block-title Логин
+                .form__block-container
+                    input(
+                       type="text"
+                       name="name"
+                       placeholder="Terminator_2000"
+                       id="username"
+                       
+                       ).form__input-name 
+                    .form__tooltip(class="showed")
+                      .form__tooltip-text                      
+ 
+            .form__row-admin
+               label(for="input__username").form__block
+                span.form__block-title Пароль
+                .form__block-container
+                    input(
+                       type="Password"
+                       name="password"
+                       placeholder="*************"
+                       id="password"
+                    ).form__input-password
+                    .form__tooltip
+                      .form__tooltip
+            .form__row-admin
+               .form__button
+                  button(type="submit").btn-submit отправить 
+</template>
+
+<script></script>
+<style lang="postcss" scoped>
+@import "../../styles/mixins.pcss";
+@import "../../styles/blocks/form.pcss";
+
+.login {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("../../images/content/maunt.jpg") center center / cover
+    no-repeat;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.6;
+    background: #364d5e;
+  }
+}
+
+.login__content {
+  position: relative;
+}
+
+.login__form {
+  width: 563px;
+  height: 520px;
+  padding: 50px 77px 60px;
+  background: #fff;
+  @include phones {
+    width: 100%;
+    padding-right: 7%;
+    padding-left: 7%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.login__close {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+}
+
+.login__close-btn {
+  width: 20px;
+  height: 20px;
+  background: svg-load("../../images/icons/remove.svg", fill=rgba(black, 0.7))
+    center center no-repeat;
+  border: none;
+  &:hover {
+    width: 23px;
+    height: 23px;
+    transition: 0.3s;
+  }
+}
+
+.login__title-box {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.form__input-name,
+.form__input-password {
+  background: svg-load(
+      "../../images/icons/Avatar.svg",
+      fill=#b8bbc3,
+      width=29px,
+      height=35px
+    )
+    no-repeat;
+
+  &:hover {
+    background: svg-load(
+        "../../images/icons/Avatar.svg",
+        fill=#5500f2,
+        width=26px,
+        height=30px
+      )
+      no-repeat;
+  }
+
+  &--error {
+    background: svg-load(
+        "../../images/icons/Avatar.svg",
+        fill=red,
+        width=26px,
+        height=30px
+      )
+      no-repeat;
+  }
+}
+
+.form__input-password {
+  background: svg-load(
+      "../../images/icons/key.svg",
+      fill=#b8bbc3,
+      width=29px,
+      height=35px
+    )
+    no-repeat;
+  &:hover {
+    background: svg-load(
+        "../../images/icons/key.svg",
+        fill=#5500f2,
+        width=26px,
+        height=30px
+      )
+      no-repeat;
+  }
+
+  &--error {
+    background: svg-load(
+        "../../images/icons/key.svg",
+        fill=red,
+        width=26px,
+        height=30px
+      )
+      no-repeat;
+  }
+}
+
+.form__input-name:hover {
+  border-bottom-color: #5500f2;
+  transition: 0.5s;
+}
+
+.form__input-password:hover {
+  border-bottom-color: #5500f2;
+  transition: 0.5s;
+}
+
+.form__input-name,
+.form__input-password {
+  position: relative;
+  padding: 5px 5px 5px 50px;
+  width: 410px;
+  height: 45px;
+  border-bottom: 2px solid #b8bbc3;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  color: #464d62;
+  font-family: "Open Sans";
+  font-size: 18px;
+  font-weight: 700;
+
+  &--error {
+    border-bottom: 2px solid red;
+    transition: 0.5s;
+  }
+}
+
+.form__row-admin {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 35px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.btn-submit {
+  @include small {
+    width: 259px;
+    height: 60px;
+    border-radius: 30px 0;
+  }
+
+  width: 347px;
+  height: 80px;
+  border-radius: 40px 5px;
+  color: #ffffff;
+  font-family: "Open Sans";
+  font-size: 18px;
+  font-weight: 600;
+  background-image: linear-gradient(to right, #9300e8 0%, #4a00ed 100%);
+
+  &:hover {
+    background-image: linear-gradient(to left, #bb00ff 0%, #5900ff 100%);
+  }
+}
+</style>

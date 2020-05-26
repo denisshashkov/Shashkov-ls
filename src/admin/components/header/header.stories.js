@@ -1,4 +1,4 @@
-import headline from "./headline";
+import header from "./header";
 import {
   action
 } from "@storybook/addon-actions";
@@ -8,34 +8,34 @@ const methods = {
 };
 
 export default {
-  title: "Headline",
+  title: "Header",
 };
 
 export const defaultView = () => ({
   components: {
-    headline,
+    header,
   },
   methods,
   template: `
-    <headline
+    <header
       @logout="onLogout"
     >
       <h1>Содержимое</h1>   
-    </headline> 
+    </header> 
   `,
 });
 
 export const withoutContent = () => ({
   components: {
-    headline,
+    header,
   },
   methods,
   template: `
-    <headline
+    <header
       @logout="onLogout"
       hideContent 
     >
-    </headline> 
+    </header> 
   `,
 });
 
