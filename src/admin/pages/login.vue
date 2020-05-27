@@ -68,6 +68,10 @@
 
 .login__content {
   position: relative;
+  @include phones {
+    height: 100%;
+    width: 100%;
+  }
 }
 
 .login__form {
@@ -182,6 +186,9 @@
 
 .form__input-name,
 .form__input-password {
+  @include iphone {
+    width: 260px;
+  }
   position: relative;
   padding: 5px 5px 5px 50px;
   width: 410px;
