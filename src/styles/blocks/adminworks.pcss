@@ -1,0 +1,231 @@
+.title {
+  color: #414c63;
+}
+
+.works__title {
+  margin-bottom: 60px;
+}
+
+.works__listwrapper {
+  margin-bottom: 40px;
+}
+
+.works__list {
+  @include ipad-pro {
+    justify-content: center;
+    margin-right: 0;
+  }
+
+  display: flex;
+  flex-wrap: wrap;
+
+  margin-right: -20px;
+}
+
+.works__item {
+  @include small {
+    margin-right: 0;
+  }
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 0 8px 0px "rgba(#414c63,.95)";
+  background-color: #fff;
+  box-shadow: 0 0 8px 0px;
+
+  max-width: 340px;
+
+  margin-right: 25px;
+  margin-bottom: 30px;
+
+  &:first-child {
+    box-shadow: none;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &.works__item--add {
+    @include phones {
+      padding: 0;
+      width: 100%;
+    }
+
+    padding: 165px 95px;
+  }
+
+  &.edittable {
+    opacity: 0.3;
+  }
+
+  @include phones {
+    max-width: 320px;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+.works__item--add {
+  @include phones {
+    height: 110px;
+    justify-content: center;
+    display: flex;
+  }
+
+  background-image: linear-gradient(to right, #006aed 0%, #3f35cb 100%);
+  padding: 77px 95px;
+
+  &:hover {
+    background-image: linear-gradient(to left, #006aed 0%, #3f35cb 100%);
+    cursor: pointer;
+  }
+}
+
+.btn-container__add-title {
+  color: #ffffff;
+  font-family: "Open Sans";
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.btn-container__add {
+  @include phones {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.btn-container__add-button {
+  @include phones {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 0;
+    margin-right: 15px;
+  }
+
+  margin-bottom: 25px;
+  width: 150px;
+  height: 150px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 72px;
+  font-weight: 300;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+  &:hover {
+    font-size: 90px;
+  }
+}
+
+.works__image {
+  flex-shrink: 0;
+  position: relative;
+  margin-bottom: 38px;
+}
+
+.works__tag-list {
+  position: absolute;
+
+  margin-bottom: 10px;
+  margin-right: 10px;
+
+  bottom: 10px;
+  right: 10px;
+
+  @include phones {
+    margin-right: 25px;
+  }
+}
+
+.works__tag {
+  border-radius: 30px 30px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  padding: 10px 16px;
+  background-color: #fff;
+}
+
+.works__description {
+  padding: 0 20px;
+  padding-bottom: 20px;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include phones {
+    padding: 0 3%;
+  }
+}
+
+.works__title {
+  color: black;
+  font-size: 18px;
+  font-weight: 900;
+
+  margin-bottom: 26px;
+}
+
+.works__text {
+  color: #414c63;
+  line-height: 30px;
+  font-size: 16px;
+  font-weight: 600;
+
+  margin-bottom: 25px;
+}
+
+.works__link {
+  display: inline-block;
+  color: #383bcf;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  margin-bottom: 40px;
+}
+
+.btns-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.button--edit {
+  background: svg-load("../../images/icons/pencil.svg", fill=#243ED7) center center no-repeat;
+  width: 17px;
+  height: 17px;
+  opacity: 0.5;
+  border: none;
+}
+
+.button--discard {
+  background: svg-load("../../images/icons/Cross.svg", fill=#bf2929) center center no-repeat;
+  width: 17px;
+  height: 17px;
+  border: none;
+}
+
+.btns {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+
+  &:before {
+    content: attr(data-text);
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    color: #c9cad0;
+    margin-right: 11px;
+  }
+}
