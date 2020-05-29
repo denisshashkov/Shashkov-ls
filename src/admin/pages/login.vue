@@ -1,47 +1,85 @@
 <template lang="pug">
 .login
-      .login__content#formAdmin
-        form.login__form
+      .login__content
+        form(@submit.prevent="submitAdmin").login__form#login
           .login__close
             button(type="button").login__close-btn
           .login__title-box
             h1.login__title Авторизация
-          .form__wrapper
+          form.form-wrap
             .form__row-admin           
-               label(for="input__username").form__block
+               label(for="input__name").form__block
                 span.form__block-title Логин
                 .form__block-container
                     input(
                        type="text"
                        name="name"
                        placeholder="Terminator_2000"
-                       id="username"
-                       
+                       id="input__name"
+                       v-model="name"
+                       v-bind:class="{ 'form__input-name--error': validation.hasError('name') }" 
                        ).form__input-name 
                     .form__tooltip(class="showed")
-                      .form__tooltip-text                      
+                      .form__tooltip-text(v-bind:class="{'form__tooltip-text--showed': validation.hasError('name')}") {{ validation.firstError('name') }}                     
  
             .form__row-admin
-               label(for="input__username").form__block
+               label(for="input__password").form__block
                 span.form__block-title Пароль
                 .form__block-container
                     input(
                        type="Password"
                        name="password"
                        placeholder="*************"
-                       id="password"
+                       id="input__password"
+                       v-model="password"
+                       v-bind:class="{ 'form__input-password--error': validation.hasError('password') }"
                     ).form__input-password
-                    .form__tooltip
-                      .form__tooltip
+                    .form__tooltip(class="showed")
+                      .form__tooltip-text(v-bind:class="{'form__tooltip-text--showed': validation.hasError('password')}") {{ validation.firstError('password') }}
             .form__row-admin
                .form__button
                   button(type="submit").btn-submit отправить 
+               
 </template>
 
-<script></script>
+<script>
+import Vue from "vue";
+import SimpleVueValidator from "simple-vue-validator";
+const Validator = SimpleVueValidator.Validator;
+Vue.use(SimpleVueValidator);
+
+export default {
+  mixins: [SimpleVueValidator.mixin],
+  data: () => ({
+    name: "",
+    password: ""
+  }),
+  validators: {
+    name: function(value) {
+      return Validator.value(value)
+        .required("Поле обязательно для заполнения")
+        .minLength(5, "Должно быть мин. 5 символов");
+    },
+
+    password: function(value) {
+      return Validator.value(value)
+        .required("Поле обязательно для заполнения")
+        .minLength(6, "Должно быть мин. 6 символов");
+    },
+    methods: {
+      submitAdmin: function() {
+        if (this.$validate()) {
+          console.log("Валидация прошла успешно!!!");
+        }
+      }
+    }
+  }
+};
+</script>
 <style lang="postcss" scoped>
 @import "../../styles/mixins.pcss";
 @import "../../styles/blocks/form.pcss";
+@import "../../styles/blocks/formTooltip.pcss";
 
 .login {
   position: fixed;
