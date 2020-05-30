@@ -1,6 +1,6 @@
 <template lang="pug">
-  .tabs-container
-    .container
+  .tabs-wrapper
+    .container-tabs
       ul.tabs
         li.tabs__item(v-for="tab in tabs")
           router-link(
@@ -28,9 +28,16 @@ export default {
 
 <style lang="postcss" scoped>
 @import "../../../styles/mixins.pcss";
-.tabs-container {
+.tabs-wrapper {
   background: #fff;
 }
+
+.container-tabs {
+  max-width: 68.125rem;
+  margin: 0 auto;
+  width: 95%;
+}
+
 .tabs {
   display: flex;
   height: 77px;

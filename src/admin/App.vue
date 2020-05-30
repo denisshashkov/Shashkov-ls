@@ -15,8 +15,8 @@ import tabs from "./components/tabs";
 export default {
   components: {
     vcHeader: header,
-    vcTabs: tabs,
-  },
+    vcTabs: tabs
+  }
 };
 </script>
 
@@ -38,18 +38,18 @@ button {
 }
 .admin-wrapper {
   display: flex;
-  .maincontent {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
+}
+.maincontent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .content {
   background: url("~images/content/admin-back.png") center center/ cover;
   flex: 1;
-  padding-top: 60px;
+  padding: 60px 0px;
   @include phones {
     padding-top: 30px;
   }

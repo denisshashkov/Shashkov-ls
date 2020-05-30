@@ -51,11 +51,10 @@ section.reviews
                         id="comments"
                         ).form__input-textarea-review
 
-                .form__row-review.form__row--btns
-                      label(data-text="").form__elem
+                .form__row-review.form__row--btns           
                         .form__elem-container
-                          button(type="button").button.button--cancel Отмена
-                          button(type="submit").button.button--save Сохранить         
+                             button(type="button").button.button--cancel Отмена
+                             button(type="submit").button.button--save Сохранить         
                
           -
             var reviewList =
@@ -110,10 +109,13 @@ section.reviews
                   .reviews__description 
                     .reviews__text #{review.text}
                     .btns-wrap
-                      .btns(data-text="Править")
-                        button(type="button").button.button--edit                         
-                      .btns(data-text="Удалить")
-                        button(type="button").button.button--discard 
+                      button(type="submit").btns-block
+                        .text__button Править
+                        .button--edit 
+                      button(type="reset").btns-block  
+                        .text__button Удалить
+                        .button--discard                         
+                      
 </template>
 
 <style lang="postcss" scoped>

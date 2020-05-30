@@ -13,7 +13,7 @@
   align-items: center;
   margin-bottom: 60px;
 
-  .page-title {
+  &-text {
     @include small {
       margin: 0px 0px 15px 0px;
     }
@@ -22,10 +22,10 @@
     margin-right: 60px;
     color: #414c63;
     font-family: "Open Sans";
-    font-size: 21px;
     font-weight: 700;
   }
 }
+
 
 .about-page__add-new {
   color: #383bcf;
@@ -56,6 +56,11 @@
     justify-content: center;
   }
 
+  @include large {
+    flex-direction: column;
+    align-items: center;
+  }
+
   display: flex;
   flex-wrap: wrap;
 }
@@ -69,14 +74,19 @@
     }
   }
 
-  @include medium {
-    width: 100%;
+  @include large {
+    width: 80%;
     margin-right: 0;
     margin-bottom: 25px;
   }
 
-  width: 45%;
+  @include small {
+    width: 100%;
+  }
+
+  width: 48%;
   height: 390px;
+  box-shadow: 0 0 5px 0px;
 
   &:first-child {
     @include tablets {
@@ -92,30 +102,30 @@
   width: 100%;
 }
 
-.skill__item {
-  @include medium {
-    display: flex;
-    justify-content: center;
-  }
+.skill__button {
+  display: flex;
+  align-items: center;
 }
 
-.form {
+.skill__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.card {
   height: 100%;
   background-color: #fff;
   padding: 30px 20px;
 }
 
 .form__elem-container {
-  @include medium {
-    justify-content: space-between;
-  }
-
   display: flex;
   align-items: baseline;
   width: 100%;
 }
 
-.form__wrapper {
+.card__wrapper {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -141,12 +151,16 @@
 }
 
 .form__elem-input {
-  @include desktop {
-    margin: 0px 0px 14px 0px;
+  @include ipad-pro {
+    max-width: 160px;
   }
 
   @include tablets {
-    width: 150px;
+    max-width: 140px;
+  }
+
+  @include iphone {
+    max-width: 120px;
   }
 
   padding: 5px 0;
@@ -176,6 +190,10 @@
   }
 
   &-footer {
+    @include ipad-pro {
+      max-width: 170px;
+    }
+
     @include tablets {
       width: 180px;
     }
@@ -224,15 +242,9 @@
   }
 }
 
-.skill__value {
-  @include desktop {
-    margin-right: 10px;
-  }
-}
 
-.skill__name {
-  margin-right: 50px;
-}
+
+
 
 .skill__value,
 .skill__value-footer {
@@ -240,8 +252,9 @@
     margin-right: 10px;
   }
 
+  align-items: center;
   display: flex;
-  margin-right: 50px;
+
 }
 
 .skill__value-footer {

@@ -62,12 +62,12 @@
                            placeholder="JQuery, Vue.js, HTML5"        
                            ).form__input-works
                           ul.form__list.form__list--tags
-                            - var tagList = ['JQuery', 'Vue.js', 'HTML5'];
+                            - var tagList = ['JQuery', 'Vue.js', 'javascript'];
                             - for (i=0; i<tagList.length; i++)
                               li.form__item-works #{tagList[i]}
                                   button(type="button").button--discard-skills        
 
-                .form__row-works
+                .form__row-works-footer
                         .form__elem-container
                           button(type="button").button.button--cancel Отмена
                           button(type="submit").button.button--save Сохранить         
@@ -125,14 +125,16 @@
                           .works__tag #{work.skills}
                   .works__description 
                     .works__description-box
-                      .works__title #{work.title}
+                      .work__title #{work.title}
                       .works__text #{work.desc}
                       a(href="#").works__link #{work.link}
                     .btns-wrap
-                      .btns(data-text="Править")
-                        button(type="button").button.button--edit                         
-                      .btns(data-text="Удалить")
-                        button(type="button").button.button--discard                         
+                      button(type="submit").btns-block
+                        .text__button Править
+                        .button--edit 
+                      button(type="reset").btns-block  
+                        .text__button Удалить
+                        .button--discard                            
 
 </template>
 

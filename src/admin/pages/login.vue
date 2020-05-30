@@ -67,11 +67,7 @@ export default {
         .minLength(6, "Должно быть мин. 6 символов");
     },
     methods: {
-      submitAdmin: function() {
-        if (this.$validate()) {
-          console.log("Валидация прошла успешно!!!");
-        }
-      }
+      submitAdmin() {}
     }
   }
 };
