@@ -3,7 +3,8 @@
     .header__container
       .header__container-user
         .header__container__user-icon
-      h3.header__container__user-title Владимир Астаханов  
+           img(src="../../../images/content/myAvatar2.jpg").user__pic-avatar
+      h3.header__container__user-title Шашков Денис 
       .desc Панель администрирования
       button(
         type="button"
@@ -16,15 +17,15 @@ export default {
   props: {
     hideContent: {
       type: Boolean,
-      default: false,
-    },
+      default: false
+    }
   },
   computed: {
     showContent() {
       const crazyComparison = 10 > 5;
       return this.hideContent === false && crazyComparison;
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -39,6 +40,11 @@ export default {
   display: flex;
 }
 
+.user__pic-avatar {
+  width: 100%;
+  height: 100%;
+}
+
 .header__container {
   align-items: center;
   display: flex;
@@ -47,21 +53,13 @@ export default {
   width: 95%;
 }
 
-.header__container-user {
+.header__container__user-icon {
   display: block;
   width: 45px;
   height: 45px;
   overflow: hidden;
   border-radius: 50%;
   margin-right: 15px;
-}
-
-.header__container__user-icon {
-  background: url("~images/content/user.jpg") center center/ cover;
-  display: block;
-  object-fit: contain;
-  width: 100%;
-  height: 100%;
 }
 
 .header__container__user-title {

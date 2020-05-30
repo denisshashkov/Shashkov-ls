@@ -51,7 +51,7 @@ section.reviews
                         id="comments"
                         ).form__input-textarea-review
 
-                .form__row-review.form__row--btns           
+                .form__row-review.form__row--btn           
                         .form__elem-container
                              button(type="button").button.button--cancel Отмена
                              button(type="submit").button.button--save Сохранить         
