@@ -1,4 +1,3 @@
-
 <template lang="pug">
 .about-container
   .about-page__title
@@ -8,9 +7,10 @@
 
   .groups
          ul.groups__list       
-              li.groups__item.groups__item--addgroup 
-                  .card
-                    .card__wrapper
+              li.groups__item.groups__item--addgroup
+
+                 .card 
+                  .card__wrapper
                       form.form__header
                         label.form__elem
                           .form__elem-container
@@ -24,7 +24,8 @@
                             input(type="text" placeholder="Новый навык").form__elem-input-footer
                             td.skill__value-footer
                               input(type="number" min="0" max="100" placeholder="100" value="100").form__elem-input-percent
-                            button(type="submit").button.button--add +
+                            button(type="submit").button.button--add +  
+
               -
                 var skillsList = [
                     [
