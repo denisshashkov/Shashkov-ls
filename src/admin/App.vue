@@ -1,30 +1,22 @@
 <template lang="pug">
-  div.root-wrapper-container
-    div.root-container
+  .root-wrapper-container
+    .root-container
       template
-        header.header-container
-          headline()
-            user(
-              name="Владимир Астаханов"
-              :pic="`${require('../images/content/user.jpg')}`"
-            )
-
-        section.tabs-container
-          tabs
-        main.content-container
-          router-view
+          vc-header        
+          vc-tabs
+          main.content
+            .page-container
+              router-view
 </template>
 
 <script>
-import headline from "./components/headline";
-import user from "./components/user";
+import header from "./components/header";
 import tabs from "./components/tabs";
 export default {
   components: {
-    headline,
-    user,
-    tabs,
-  },
+    vcHeader: header,
+    vcTabs: tabs
+  }
 };
 </script>
 
@@ -46,24 +38,26 @@ button {
 }
 .admin-wrapper {
   display: flex;
-  .maincontent {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
 }
-.content-container {
-  background: url("~images/content/admin.png") center center no-repeat / cover;
+.maincontent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  background: url("~images/content/admin-back.png") center center/ cover;
   flex: 1;
-  padding-top: 60px;
+  padding: 60px 0px;
   @include phones {
     padding-top: 30px;
   }
 }
-.page-title {
-  margin-bottom: 60px;
-  font-size: 21px;
-  font-weight: bold;
+
+.page-container {
+  max-width: 1090px;
+  margin: 0 auto;
+  width: 95%;
 }
 </style>

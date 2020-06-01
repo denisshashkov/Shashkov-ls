@@ -1,0 +1,31 @@
+.login__content
+  h2.login__title Авторизация
+  form(@submit.prevent="submitForm").login__form
+    .login__row
+      .input.input--iconed.input__icon--user
+        label(for="input__name").input__label Логин
+        .input__wrapper
+          input(
+          type="text"
+          name="name"
+          id="input__name"
+          v-model="name"
+          v-bind:class="{ 'input__element--error': validation.hasError('name') }").input__element
+        .tooltip-container(class="showed")
+          .input-tooltip(v-bind:class="{ 'input-tooltip--showed': validation.hasError('name') }") {{ validation.firstError('name') }}
+    .login__row
+      .input.input--iconed.input__icon--key
+        label(for="input__password").input__label Пароль
+        .input__wrapper
+          input(
+            type="text" 
+            name="name" 
+            id="input__password"
+            v-model="password"
+            v-bind:class="{ 'input__element--error': validation.hasError('password') }"
+            ).input__element
+        .tooltip-container(class="showed")
+          .input-tooltip(v-bind:class="{ 'input-tooltip--showed': validation.hasError('password') }") {{ validation.firstError('password') }}
+    .login__row
+      .login__btn
+        button(type="submit").btn.btn--feedback Отправить     

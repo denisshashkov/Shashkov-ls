@@ -63,8 +63,12 @@
     "pug": "^2.0.4",
     "request": "^2.88.0",
     "signale": "^1.4.0",
+    "simple-vue-validator": "^0.16.0",
+    "test": "^0.6.0",
+    "utils": "^0.3.1",
     "vue": "^2.6.11",
     "vue-carousel": "^0.18.0",
-    "vue-router": "^3.2.0"
+    "vue-router": "^3.3.2",
+    "vuex": "^3.4.0"
   }
 }

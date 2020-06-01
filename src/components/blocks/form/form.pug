@@ -1,28 +1,51 @@
 .form-title 
-    h2 Связаться со мной
+  h2 Связаться со мной
+form(@submit.prevent="submit").form-wrap#form
+  .form__row
+    label(for="input__username").form__block
+      span.form__block-title Введите ваше имя 
+      .form__block-container
+        input(
+          type="text"
+          name="username"
+          placeholder="Ковальчук Дмитрий"
+          id="username"
+          v-model="username"
+          v-bind:class="{ 'form__input-username--error': validation.hasError('username') }").form__input-username
+        .form__tooltip(class="showed")
+          .form__tooltip-text(v-bind:class="{'form__tooltip-text--showed': validation.hasError('username')}") {{ validation.firstError('username') }}
 
-form.form-wrap
-                .form__row
-                  label.form__block
-                    span.form__block-title Введите ваше имя  
-                    span.form-icon  
-                        +icon("Avatar", "input-image") 
-                    input(type="text").form__input
-                    
-                  label.form__block
-                    span.form__block-title Введите ваш email 
-                    span.form-icon  
-                        +icon("envelope", "input-image")
-                    input(type="text").form__input   
+    label(for="input__email").form__block
+      span.form__block-title Введите ваш email 
+      .form__block-container
+        input(
+          type="email"
+          name="email"
+          placeholder="loftschool@study.com"
+          id="email"
+          v-model="email"
+          v-bind:class="{ 'form__input-email--error': validation.hasError('email') }").form__input-email
+        .form__tooltip(class="showed")
+          .form__tooltip-text(v-bind:class="{'form__tooltip-text--showed': validation.hasError('email')}") {{ validation.firstError('email') }}  
 
-                .form__row
-                  label.form__block-area 
-                    span.form__block-title Сообщение к письму
-                    span.form-icon 
-                        +icon("message", "input-image")
-                    textarea(name="comment" placeholder="" required).form__input-textarea 
+  .form__row
+    label(for="input__comments").form__block-area 
+      span.form__block-title Сообщение к письму
+      .form__block-container
+        textarea(
+          name="comments"
+          placeholder="Требуется ваша помощь в создании сайта.\nИнтересуют сроки и цена вопроса"
+          type="textarea"
+          id="comments"
+          v-model="comments"
+          v-bind:class="{ 'form__input-textarea--error': validation.hasError('comments') }").form__input-textarea
+        .form__tooltip(class="showed")
+          .form__tooltip-text(v-bind:class="{'form__tooltip-text--showed': validation.hasError('comments')}") {{ validation.firstError('comments') }}  
+
+  .form__row
+    .form__button
+      button(type="submit").btn-submit отправить 
 
 
-                .form__row
-                  .form__button
-                    button(type="submit").btn-submit отправить    
+
+

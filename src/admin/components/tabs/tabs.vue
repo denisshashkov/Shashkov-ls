@@ -1,64 +1,82 @@
 <template lang="pug">
-  .tabs-component
-    ul.tabs  
-      li.tab(
-        v-for="tab in tabs" 
-        :key="tab.id"
-        :class="{'active' : tab.id === activeTabId}"
-      )
-        button(
-          type="button"
-          @click="changeTab(tab)"
-        ).btn {{tab.title}}
+  .tabs-wrapper
+    .container-tabs
+      ul.tabs
+        li.tabs__item(v-for="tab in tabs")
+          router-link(
+            :data-text="tab.title" 
+            :to="tab.href"
+            exact-active-class="active"
+          ).tabs__link
 
 </template>
+
 <script>
-const tabs = [
-  { id: 0, title: "Обо мне", link: "/about" },
-  { id: 1, title: "Работы", link: "/works" },
-  { id: 2, title: "Отзывы", link: "/reviews" },
-];
 export default {
   data() {
     return {
-      tabs,
-      activeTabId: 0,
+      tabs: [
+        { title: "Обо мне", href: "/" },
+        { title: "Отзывы", href: "/reviews" },
+        { title: "Работы", href: "/works" }
+      ]
     };
-  },
-  methods: {
-    changeTab(tab) {
-      this.activeTabId = tab.id;
-      this.$emit("change", tab);
-    },
-  },
+  }
 };
 </script>
 
+
 <style lang="postcss" scoped>
+@import "../../../styles/mixins.pcss";
+.tabs-wrapper {
+  background: #fff;
+}
+
+.container-tabs {
+  max-width: 68.125rem;
+  margin: 0 auto;
+  width: 95%;
+}
+
 .tabs {
   display: flex;
   height: 77px;
-  background: #fff;
-}
-.active {
-  &:after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: red;
+  @include phones {
+    height: 87px;
   }
 }
-.tab {
-  display: flex;
-  position: relative;
+.tabs__item {
+  height: 100%;
+  margin-right: 30px;
+  @include phones {
+    margin-right: 3px;
+  }
+  &:last-child {
+    margin-right: 0;
+  }
 }
-.btn {
+.tabs__link {
+  vertical-align: middle;
+  white-space: nowrap;
   display: flex;
-  flex-direction: column;
+  height: 100%;
   align-items: center;
+  cursor: pointer;
+  width: 125px;
   justify-content: center;
+  border-bottom: 3px solid transparent;
+  text-decoration: none;
+  @include phones {
+    width: 100px;
+  }
+  &:before {
+    content: attr(data-text);
+  }
+  &:hover,
+  &.active {
+    color: #383bcf;
+    font-weight: 600;
+    border-color: currentColor;
+  }
 }
 </style>
