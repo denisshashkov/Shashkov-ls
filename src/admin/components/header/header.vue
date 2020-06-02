@@ -17,15 +17,15 @@ export default {
   props: {
     hideContent: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   computed: {
     showContent() {
       const crazyComparison = 10 > 5;
       return this.hideContent === false && crazyComparison;
-    }
-  }
+    },
+  },
 };
 </script>
 

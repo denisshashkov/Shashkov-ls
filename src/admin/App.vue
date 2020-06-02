@@ -7,6 +7,7 @@
           main.content
             .page-container
               router-view
+          vc-tooltip()   
 </template>
 
 <script>
@@ -15,8 +16,9 @@ import tabs from "./components/tabs";
 export default {
   components: {
     vcHeader: header,
-    vcTabs: tabs
-  }
+    vcTabs: tabs,
+    vcTooltip: () => import("components/tooltip/tooltip.vue/"),
+  },
 };
 </script>
 
