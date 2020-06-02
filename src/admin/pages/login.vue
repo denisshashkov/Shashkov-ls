@@ -8,7 +8,7 @@
               type="button").login__close-btn
           .login__title-box
             h1.login__title Авторизация
-          form.form-wrap
+          .form-wrap
             .form__row-admin           
                label(for="input__name").form__block
                 span.form__block-title Логин
@@ -19,10 +19,10 @@
                        placeholder="Terminator_2000"
                        id="input__name"
                        v-model="user.name"
-                       v-bind:class="{ 'form__input-name--error': validation.hasError('name') }" 
+                       v-bind:class="{ 'form__input-name--error': validation.hasError('user.name') }" 
                        ).form__input-name 
                     .form__tooltip(class="showed")
-                      .form__tooltip-text(v-bind:class="{'form__tooltip-text--showed': validation.hasError('name')}") {{ validation.firstError('name') }}                     
+                      .form__tooltip-text(v-bind:class="{'form__tooltip-text--showed': validation.hasError('user.name')}") {{ validation.firstError('user.name') }}                     
  
             .form__row-admin
                label(for="input__password").form__block
@@ -34,10 +34,10 @@
                        placeholder="*************"
                        id="input__password"
                        v-model="user.password"
-                       v-bind:class="{ 'form__input-password--error': validation.hasError('password') }"
+                       v-bind:class="{ 'form__input-password--error': validation.hasError('user.password') }"
                     ).form__input-password
                     .form__tooltip(class="showed")
-                      .form__tooltip-text(v-bind:class="{'form__tooltip-text--showed': validation.hasError('password')}") {{ validation.firstError('password') }}
+                      .form__tooltip-text(v-bind:class="{'form__tooltip-text--showed': validation.hasError('user.password')}") {{ validation.firstError('user.password') }}
             .form__row-admin
                .form__button
                   button(type="submit").btn-submit отправить 
@@ -45,10 +45,15 @@
 </template>
 
 <script>
+import axios from "axios";
 import Vue from "vue";
 import SimpleVueValidator from "simple-vue-validator";
-import axios from "axios";
-const baseUrl = "https://webdev-api.loftschool.com/";
+
+const baseUrl = "https://webdev-api.loftschool.com";
+const token = localStorage.getItem("token") || "";
+
+axios.defaults.baseURL = baseUrl;
+axios.defaults.headers["Authorization"] = `Bearer ${token}`;
 
 const Validator = SimpleVueValidator.Validator;
 Vue.use(SimpleVueValidator);
@@ -56,28 +61,40 @@ export default {
   mixins: [SimpleVueValidator.mixin],
 
   validators: {
-    name: function(value) {
+    "user.name"(value) {
       return Validator.value(value)
         .required("Поле обязательно для заполнения")
         .minLength(4, "Должно быть мин. 4 символов");
     },
-    password: function(value) {
+    "user.password"(value) {
       return Validator.value(value)
         .required("Поле обязательно для заполнения")
         .minLength(4, "Должно быть мин. 4 символов");
     }
   },
 
-  data: () => ({
-    user: {
-      name: "",
-      password: ""
-    }
-  }),
+  data() {
+    return {
+      user: {
+        name: "shashkov",
+        password: "nastia6886"
+      }
+    };
+  },
 
   methods: {
     login() {
-      console.log(this.user);
+      axios
+        .post("/login", this.user)
+        .then(response => {
+          const token = response.data.token;
+          axios.defaults.headers["Authorization"] = `Bearer ${token}`;
+          localStorage.setItem("token", token);
+          this.$router.replace("/");
+        })
+        .catch(error => {
+          console.log(error.response.data);
+        });
     },
     close() {
       location.href = localStorage.getItem("homePage");
