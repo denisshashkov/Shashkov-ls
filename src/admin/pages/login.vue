@@ -64,20 +64,19 @@ export default {
       return Validator.value(value)
         .required("Поле обязательно для заполнения")
         .minLength(4, "Должно быть мин. 4 символов");
-    },
+    }
   },
 
   data() {
     return {
       user: {
         name: "shashkov",
-        password: "nastia6886",
-      },
+        password: "nastia6886"
+      }
     };
   },
-
   components: {
-    vcTooltip: () => import("../components/tooltip/tooltip.vue"),
+    vcTooltip: () => import("../components/tooltip/tooltip.vue")
   },
 
   methods: {
@@ -86,7 +85,7 @@ export default {
       if (await this.$validate()) {
         try {
           const {
-            data: { token },
+            data: { token }
           } = await this.$axios.post("/login", this.user);
 
           localStorage.setItem("token", token);
@@ -101,8 +100,8 @@ export default {
     },
     close() {
       location.href = localStorage.getItem("homePage");
-    },
-  },
+    }
+  }
 };
 </script>
 <style lang="postcss" scoped>

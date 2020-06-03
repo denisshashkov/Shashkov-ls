@@ -8,24 +8,33 @@
       .desc Панель администрирования
       button(
         type="button"
-        @click="$emit('logout')"
+          @click="logout"
       ).logout Выйти
 </template>
 
 <script>
+import { mapActions } from "vuex";
+
 export default {
   props: {
     hideContent: {
       type: Boolean,
-      default: false,
-    },
+      default: false
+    }
   },
   computed: {
     showContent() {
       const crazyComparison = 10 > 5;
       return this.hideContent === false && crazyComparison;
-    },
+    }
   },
+  methods: {
+    ...mapActions("user", ["logoutUser"]),
+    async logout() {
+      await this.logoutUser();
+      await this.$router.replace("/login");
+    }
+  }
 };
 </script>
 
