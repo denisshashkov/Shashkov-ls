@@ -29,11 +29,12 @@ new Vue({
       return Validator.value(value).required('Поле обязательно для заполнения').minLength(8, 'Должно быть мин. 8 символов')
     },
   },
+
   methods: {
     submit: function () {
       if (this.$validate()) {
         console.log('Валидация прошла успешно!!!')
       }
-    },
+    }
   }
 })

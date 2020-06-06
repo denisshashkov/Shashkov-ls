@@ -1,0 +1,58 @@
+.input {
+  position: relative;
+
+  &__label {
+    display: block;
+    color: #ADB4BA;
+    font-weight: 600;
+    line-height: 36px;
+    cursor: pointer;
+  }
+
+  &__element {
+    background: transparent;
+    border: 0;
+    color: #565E71;
+    font-weight: 600;
+    width: 100%;
+    line-height: 36px;
+    border-bottom: 1px solid #565E71;
+    cursor: pointer;
+
+    &:focus {
+      cursor: initial;
+    }
+
+    &--strong {
+      font-size: 18px;
+      font-weight: 600;
+
+      &::placeholder {
+        color: inherit;
+        font-weight: inherit;
+      }
+    }
+  }
+
+  &--iconed {
+    .input__label {
+      margin-left: 45px;
+    }
+
+    .input__element {
+      padding-left: 45px;
+      background: left center / auto 29px no-repeat;
+    }
+  }
+
+
+}
+
+textarea.input {
+  &__element {
+    height: 146px;
+    padding: 10px 20px;
+    resize: none;
+    border: 1px solid #565E71;
+  }
+}

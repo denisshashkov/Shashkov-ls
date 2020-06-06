@@ -17,13 +17,13 @@ export default {
   components: {
     vcHeader: header,
     vcTabs: tabs,
-    vcTooltip: () => import("components/tooltip/tooltip.vue/"),
-  },
+    vcTooltip: () => import("components/tooltip/tooltip.vue/")
+  }
 };
 </script>
 
 <style lang="pcss">
-@import "./default.pcss";
+@import "./styles/main.pcss";
 button {
   border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
   border-style: solid;

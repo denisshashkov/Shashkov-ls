@@ -99,7 +99,7 @@ export default {
       }
     },
     close() {
-      location.href = localStorage.getItem("homePage");
+      location.href = localStorage.getItem("landingPage");
     }
   }
 };

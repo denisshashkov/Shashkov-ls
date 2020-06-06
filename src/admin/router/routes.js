@@ -14,7 +14,7 @@ export default [{
   },
   {
     path: "/reviews",
-    component: () => import("../pages/reviews.vue"),
+    component: () => import("../pages/reviews/reviews.vue"),
     meta: {
       title: "Блок «Отзывы»"
     }

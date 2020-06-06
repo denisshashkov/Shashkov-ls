@@ -1,0 +1,37 @@
+.modal {
+  position: fixed;
+  display: none;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: #364d5e;
+  opacity: .9;
+
+  &.show {
+    display: block;
+  }
+}
+
+.modal__content {
+  position: fixed;
+  display: block;
+  max-width: 80%;
+  padding: 60px 100px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+}
+
+.modal__title {
+  font-size: 36px;
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.modal__button {
+  margin: 0 auto;
+}

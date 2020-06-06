@@ -3,7 +3,7 @@ if (process.env.NODE_ENV === "development") {
   require("file-loader!./index.pug");
 }
 
-localStorage.setItem('homePage', location.href);
+localStorage.setItem('landingPage', location.href);
 
 import "./scripts/skills";
 import "./scripts/parallax";
