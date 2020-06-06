@@ -11,8 +11,8 @@
 </template>
 
 <script>
-import header from "./components/header";
-import tabs from "./components/tabs";
+import header from "./components/header/header.vue";
+import tabs from "./components/tabs/tabs.vue";
 export default {
   components: {
     vcHeader: header,

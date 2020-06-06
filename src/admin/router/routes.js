@@ -21,7 +21,7 @@ export default [{
   },
   {
     path: "/login",
-    component: () => import("../pages/login.vue"),
+    component: () => import("../pages/login/login.vue"),
     meta: {
       public: true
     }
