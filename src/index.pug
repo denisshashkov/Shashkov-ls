@@ -1,7 +1,7 @@
 include ./mixins.pug
 
 <!DOCTYPE html>
-html(lang="en")
+html(lang="ru")
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
@@ -15,7 +15,21 @@ html(lang="en")
 
         include ./components/sections/welcome        
 
-        include ./components/sections/values
+        .triangles.values-section__triangles
+          svg.triangles__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
+            polygon(points="0,0 0,100 1000,100")
+          svg.triangles__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
+            polygon(points="0,100 1000,100 1000,0")
+        .values#skills  
+          .container.values__container   
+            .values__content
+              .values__header
+                h2.title.values__title Чем я могу быть полезен вам
+                p.values__description Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+              .values__skills#skills-list
+                vc-skills
+
+
 
         include ./components/sections/works-slider
 
@@ -24,6 +38,8 @@ html(lang="en")
         include ./components/blocks/footer/footer
 
         include ./components/blocks/modal/modal
+
+        include ./components/blocks/entry.pug
 
 
 
