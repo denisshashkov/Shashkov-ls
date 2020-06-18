@@ -1,4 +1,5 @@
 include ./mixins.pug
+include ./components/blocks/button/button
 
 <!DOCTYPE html>
 html(lang="ru")
@@ -28,18 +29,33 @@ html(lang="ru")
                 p.values__description Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
               .values__skills#skills-list
                 vc-skills
+        section.works#works
+          .container.works__container
+            h2.title.works__title Мои работы
+            .works__wrapper
+              .works__slider
+                vc-works-slider
+              .works__content
+                .works__tags
+                  vc-tags
+                vc-work
+
+        .triangles.values-section__triangles-bottom
+          svg.triangles__item-bottom(viewBox="0 0 1000 100" preserveAspectRatio="none")
+            polygon(points="0,0 0,100 1000,100")
+          svg.triangles__item-bottom(viewBox="0 0 1000 100" preserveAspectRatio="none")
+            polygon(points="0,100 1000,100 1000,0")
 
 
 
-        include ./components/sections/works-slider
 
-        include ./components/sections/buda
+      include ./components/sections/buda
 
-        include ./components/blocks/footer/footer
+      include ./components/blocks/footer/footer
 
-        include ./components/blocks/modal/modal
+      include ./components/blocks/modal/modal
 
-        include ./components/blocks/entry.pug
+      include ./components/blocks/entry.pug
 
 
 
