@@ -1,4 +1,5 @@
-.modal
-  .modal__content
-    .modal__title Письмо отправлено
-    button(type="button").btn-submit Закрыть 
+script(type="text/x-template")#modal-template
+  .modal-container(:class="{ showed: modal.showed }")
+    .modal
+      .modal__title Письмо отправлено
+      button(@click="closeModal").btn-submit Закрыть 

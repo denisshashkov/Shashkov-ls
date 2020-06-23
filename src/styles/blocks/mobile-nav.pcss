@@ -1,0 +1,30 @@
+#mobile-nav {
+  display: none;
+
+  @include tablets {
+    display: block;
+    cursor: pointer;
+    width: 26px;
+    margin-left: 20px;
+  }
+
+
+  &.clicked {
+    display: none;
+
+    .mobile-nav__line {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.mobile-nav__line {
+  border: 2px solid $text-color;
+  border-radius: 2px;
+  background-color: $text-color;
+  margin-bottom: 5px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

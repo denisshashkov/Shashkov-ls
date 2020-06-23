@@ -1,6 +1,7 @@
 {
   "text-color": "#414c63",
   "links-color": "#4b6fd7",
+  "links-active": "#5500f2",
   "tag-color": "#7aa0c5",
   "slider-active-color": "#f29400",
   "slider-button": "#2d3c4e",
@@ -12,5 +13,30 @@
   "bp-desktop-hd": "1800px",
   "bp-desktop": "1200px",
   "bp-tablets": "768px",
-  "bp-phones": "480px"
+  "bp-phones": "480px",
+
+
+
+  "light-color": "#414c63",
+  "white-color": "#fff",
+  "stroke-color": "#eaeaea",
+  "footer-color": "#1f232d",
+  "linear-startcolor": "#ad00ed",
+  "linear-endcolor": "#5500f2",
+  "topmain-color": "#a5c4f3",
+  "linear-startcolor-hover": "#bb02ff",
+  "linear-endcolor-hover": "#610cff",
+  "error-color": "#cd1515",
+  "green-color": "#4bb133",
+  "brown-color": "#b18333",
+  "red-color": "#b13333",
+
+
+  "bp-desktop1280": "1280px",
+  "bp-tablets-small": "655px",
+  "bp-phones-big": "540px",
+  "bp-phones-small": "320px",
+  "bp-desktop1350": "1350px",
+  "bp-desktop1110": "1110px",
+  "bp-desktop960": "960px"
 }

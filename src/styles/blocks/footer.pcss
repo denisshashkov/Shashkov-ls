@@ -33,15 +33,7 @@
 
 .footer-right {
   @include tablets {
-    padding-left: 50px;
-  }
-
-  @include medium {
-    padding-left: 10px;
-  }
-
-  @include small {
-    padding: 0;
+    padding-left: 0;
   }
 
   max-width: 940px;
@@ -65,10 +57,10 @@
 .footer__left {
   @include desktop {
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: start;
   }
 
-  @include tablets {
+  @include desktop {
     justify-content: start;
     margin-right: 72px;
   }
@@ -81,7 +73,7 @@
   margin-right: 130px;
 
   &-date {
-    @include tablets {
+    @include desktop {
       margin-right: 0;
       margin-bottom: 25px;
       width: 159px;
@@ -210,24 +202,7 @@
   }
 }
 
-.socials__link-footer {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 25px;
-  height: 20px;
-  display: block;
-  fill: #66686E;
-}
 
-.footer-icons {
-  width: 45px;
-  height: 45px;
-  border: 1px solid #66686E;
-  border-radius: 50%;
-  position: relative;
-}
 
 .menu__link-footer:hover {
   color: #5500f2;
