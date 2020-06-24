@@ -11,16 +11,64 @@ html(lang="ru")
   body
     .wrapper
       main.maincontent
-
-
-
-        include ./components/sections/welcome        
-
+        <!--===============Overall Section Welcom==================-->
+        .welcome
+          include ./components/blocks/parallax/parallax
+          <!--=============Hero Section==============-->  
+          section#section_1.hero
+            .container.hero-container 
+              <!--===========Header=============-->
+              header.header               
+                .header__logo
+                  .logo                  
+                    h2.logo__title ДШ
+                .header__menu
+                  nav#navigation_menu                  
+                .header__socials
+                  include ./components/blocks/socials/socials
+                #mobile-nav.mobile-nav
+                  - for (var i=0; i<3; i++)                
+                    .mobile-nav__line
+              <!--============Content============-->      
+              .mountains__content
+                .user-data
+                  .user-data__desc Личный сайт<br> веб разработчика
+                  h1.user-data__name Шашков Денис
+              .mountains__button
+                .mountains__button-btn
+                  button(type='button').scroll__icon
+          <!--==============About Section============--> 
+          section#section_2.about
+            .container.about__container
+              .about__left
+                .user
+                  .avatar.user__avatar
+                    +image("content/myAvatar2.jpg", "avatar__pic")
+                .user__desc
+                  - 
+                    var userdata = [
+                      ['Проживаю:', 'Беларусь'],
+                      ['Возраст:', '36 лет'],
+                      ['Родился:', '19 сентября 1983'],
+                    ]
+                  table.user-info__data
+                    tbody.user-info__data-body
+                      each row in userdata
+                        tr
+                          td.first-row #{row[0]}
+                          td.second-row #{row[1]}
+              .about__right
+                h4.about__prolog Привет, меня зовут
+                h2.about__title Шашков Денис
+                .about__text Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                .about__ps Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+        <!--===========Triangles Block=============-->
         .triangles.values-section__triangles
           svg.triangles__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
             polygon(points="0,0 0,100 1000,100")
           svg.triangles__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
             polygon(points="0,100 1000,100 1000,0")
+        <!--============Values Section==============-->
         section#section_3    
           .values#skills  
             .container.values__container   
@@ -30,6 +78,7 @@ html(lang="ru")
                   p.values__description Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
                 .values__skills#skills-list
                   vc-skills
+        <!--============Works Section===============-->          
         section#section_4          
           .works#works
             .container.works__container
@@ -41,27 +90,54 @@ html(lang="ru")
                   .works__tags
                     vc-tags
                   vc-work
-
+        <!--==========Triangles Block===============-->
         .triangles.values-section__triangles-bottom
           svg.triangles__item-bottom(viewBox="0 0 1000 100" preserveAspectRatio="none")
             polygon(points="0,0 0,100 1000,100")
           svg.triangles__item-bottom(viewBox="0 0 1000 100" preserveAspectRatio="none")
             polygon(points="0,100 1000,100 1000,0")
+        <!--===========Overall Section Budda=========-->  
+        .budda
+          include ./components/blocks/buddaParallax/buddaParallax
+          <!--============Reviews Section============-->
+          include ./components/blocks/reviewsSlider/reviews
+          <!--============Feedback Section===========-->
+          section#section_6
+            .form-section
+              .container    
+                include ./components/blocks/form/form 
+        <!--==============Footer==============-->
+        footer.footer
+          .container.footer-container
+            .footer__left
+              .footer__left-date 
+                .copyright © 2019   
+              .footer__left-content
+                .footer__left-content__name Шашков Денис
+                span.footer__left-content__text Личный сайт веб-разработчика
+            .footer-right
+              .footer__btns
+                nav#navigation_menu--footer.menu-footer
+              .footer__content
+                .footer__content-left     
+                  .footer__content-left__text
+                    article Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool 
+                  .footer__content-left__link
+                    include ./components/blocks/socials/socials  
+                .footer__content-right
+                  .footer__content-right__text
+                    article Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете      
+                  .footer__content-right__author   
+                    h4 Martin Golding
+        <!--==========Tooltip===========-->
+        #tooltip
+          vc-tooltip
+        <!--==========Modal=============-->
+        #modal
+          vc-modal
 
 
-
-
-      include ./components/sections/buda
-
-      include ./components/blocks/footer/footer
-
-      #tooltip
-        vc-tooltip
-
-      #modal
-        vc-modal
-
-      include ./components/blocks/entry.pug
+        include ./components/blocks/entry.pug
 
 
 

@@ -27,7 +27,7 @@
     }
 
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
   }
 }
 
@@ -69,17 +69,15 @@
     margin-right: 0;
   }
 
+  flex-direction: column;
   display: flex;
-  margin-right: 130px;
 
   &-date {
     @include desktop {
       margin-right: 0;
-      margin-bottom: 25px;
-      width: 159px;
     }
 
-    margin-right: 30px;
+    margin-bottom: 25px;
   }
 }
 
@@ -261,4 +259,12 @@
     line-height: 30px;
     text-decoration: none;
   }
+}
+
+.copyright {
+  font-size: 50px;
+  font-weight: 600;
+  color: #fff;
+  opacity: .15;
+  line-height: 38px;
 }
