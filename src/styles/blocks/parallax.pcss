@@ -1,4 +1,12 @@
 .parallax {
+  @include tablets {
+    min-width: 768px;
+    background-image: url('~images/content/parallax/Mountain_Baloon.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+
   position: absolute;
   top: 0;
   left: 50%;
@@ -8,11 +16,11 @@
   overflow: hidden;
 
   @media (min-width: 769px) {
-    min-width: 2560px;
+    min-width: 1200px;
   }
 
   @media (min-width: 1201px) {
-    min-width: 2560px;
+    min-width: 1800px;
   }
 
   @media (min-width: 1801px) {
@@ -24,7 +32,12 @@
   }
 }
 
-.parallax__layer {
+.parallax__layer,
+.parallax__layer-buda {
+  @include tablets {
+    display: none;
+  }
+
   position: absolute;
   top: 0;
   left: 0;
@@ -33,7 +46,9 @@
   will-change: transform;
 
   &:nth-child(1) {
-    .parallax__image {
+
+    .parallax__image,
+    .parallax__image-buda {
       object-fit: cover;
       max-width: initial;
       min-width: 100%;
@@ -45,13 +60,13 @@
   &:nth-child(2) {
     .parallax__image {
       width: 100%;
-      top: 430px;
+      top: 350px;
     }
   }
 
   &:nth-child(3) {
     .parallax__image {
-      top: 480px;
+      top: 400px;
       left: 50%;
       margin-left: 17%;
     }
@@ -60,7 +75,7 @@
   &:nth-child(4) {
     .parallax__image {
       width: 100%;
-      top: 550px;
+      top: 520px;
     }
   }
 
@@ -91,7 +106,8 @@
   }
 }
 
-.parallax__image {
+.parallax__image,
+.parallax__image-buda {
   position: absolute;
   will-change: transform;
   transition: transform 0.3s;

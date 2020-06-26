@@ -3,17 +3,24 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px 0px;
-}
 
-.header__menu {
-  @include desktop {
-    flex-basis: 60%;
+  &__menu {
+    @include desktop {
+      flex-basis: 60%;
+    }
+
+    flex-basis: 50%;
+
+    & .menu__list {
+      @include tablets {
+        display: none;
+      }
+    }
   }
 
-  flex-basis: 50%;
+  &__socials {
 
-  & .menu__list {
-    @include tablets {
+    @include small {
       display: none;
     }
   }
@@ -22,11 +29,4 @@
 .logo__title {
   font-size: 38px;
   font-weight: 800;
-}
-
-.header__socials {
-
-  @include small {
-    display: none;
-  }
 }

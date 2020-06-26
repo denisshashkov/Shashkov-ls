@@ -12,7 +12,6 @@
   &__container {
     @include tablets {
       max-width: 740px;
-
     }
 
     @include large {
@@ -50,8 +49,12 @@
 
   &__prolog,
   &__text {
-    opacity: 0.7;
-    color: #464d62;
+    @include tablets {
+      margin-bottom: 40px;
+    }
+
+    opacity: 0.8;
+    color: $text-color;
     font-size: 16px;
     font-weight: 600;
     line-height: 30px;
@@ -60,7 +63,7 @@
   &__ps {
     position: relative;
     opacity: 0.7;
-    color: #464d62;
+    color: $text-color;
     font-family: "Open Sans";
     font-size: 16px;
     line-height: 30px;
@@ -90,7 +93,7 @@
       line-height: 36px;
     }
 
-    color: #464d62;
+    color: $text-color;
     font-family: "Open Sans";
     font-size: 36px;
     font-weight: 700;
@@ -98,7 +101,6 @@
 
   }
 }
-
 
 .user {
   @include tablets {
@@ -118,7 +120,7 @@
     width: 70px;
     height: 15px;
     opacity: 0.7;
-    color: #464d62;
+    color: $text-color;
     font-size: 16px;
     font-weight: 600;
     line-height: 30px;
@@ -127,36 +129,22 @@
   &__value {
     width: 106px;
     height: 16px;
-    color: #464d62;
+    color: $text-color;
     font-size: 16px;
     font-weight: 700;
     line-height: 30px;
   }
 }
 
-
-
-.about__text {
-  @include tablets {
-    margin-bottom: 40px;
-  }
-
-
-}
-
-.first-row {
-  opacity: 0.4;
-  color: #464d62;
+.first-row,
+.second-row {
+  color: $text-color;
   font-size: 16px;
   font-weight: 600;
   line-height: 30px;
 }
 
 .second-row {
-  color: #464d62;
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 30px;
   padding-left: 70px;
   white-space: nowrap;
 }

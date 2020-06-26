@@ -7,30 +7,35 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  &-btn {
+    width: max-content;
+    display: flex;
+    animation: bounce 1.5s;
+    animation-iteration-count: infinite;
+
+    &:before {
+      content: "Скролл";
+      display: flex;
+      align-items: center;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    &:after {
+      content: "";
+      display: block;
+      background: svg-load('../../images/icons/scroll.svg', fill=$text-color, width=40px, height=35px)center center/cover no-repeat;
+      width: 40px;
+      height: 35px;
+      cursor: pointer;
+    }
+  }
 }
 
-.mountains__button-btn {
-  width: max-content;
-  display: flex;
-  animation: bounce 1.5s;
-  animation-iteration-count: infinite;
-
-  &:before {
-    content: "Скролл";
-    display: flex;
-    align-items: center;
-    font-weight: 600;
-    cursor: pointer;
-  }
-
-  &:after {
-    content: "";
-    display: block;
-    background: svg-load('../../images/icons/scroll.svg', fill=$text-color, width=40px, height=35px)center center/cover no-repeat;
-    width: 40px;
-    height: 35px;
-    cursor: pointer;
-  }
+.noActive {
+  opacity: 0;
+  transition: .8s;
 }
 
 @keyframes bounce {

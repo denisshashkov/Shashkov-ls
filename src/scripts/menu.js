@@ -172,4 +172,5 @@ scrollButton.addEventListener('click', e => {
   scrollButton.scrollIntoView({
     behavior: "smooth"
   });
+  scrollButton.classList.add('noActive')
 });

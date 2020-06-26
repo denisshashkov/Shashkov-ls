@@ -1,43 +1,157 @@
-* {
-  box-sizing: border-box;
-}
+.form {
+  &-section {
+    min-height: 680px;
+    position: relative;
+  }
 
-.form-section {
-  min-height: 680px;
-  position: relative;
-}
+  &__block-container {
+    position: relative;
+  }
 
+  &-title {
+    @include tablets {
+      text-align: center;
+      font-size: 23px;
+      margin-bottom: 60px;
+    }
 
-.form-title {
-  @include tablets {
-    text-align: center;
-    font-size: 23px;
+    @include small {
+      font-size: 20px;
+    }
+
+    @include phones {
+      font-size: 18px;
+    }
+
+    margin-bottom: 70px;
+  }
+
+  &-wrap {
+    @include tablets {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @include iphone {
+      text-align: center;
+    }
+  }
+
+  &-icon {
+    @include iphone {
+      opacity: 0;
+    }
+
+    margin-bottom: -40px;
+  }
+
+  &__block {
+    @include tablets {
+      margin-right: 20px;
+    }
+
+    @include small {
+      margin-right: 0;
+    }
+
+    display: flex;
+    flex-direction: column;
+    margin-right: 85px;
+
+    &:first-child {
+      @include iphone {
+        margin-bottom: 30px;
+      }
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &-title {
+      @include iphone {
+        padding: 0;
+      }
+
+      opacity: 0.5;
+      color: #464d62;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 30px;
+      margin-bottom: 10px;
+      padding-left: 50px;
+    }
+  }
+
+  &__row {
+    @include small {
+      flex-direction: column;
+    }
+
+    display: flex;
     margin-bottom: 60px;
   }
 
-  @include small {
-    font-size: 20px;
-  }
-
-  @include phones {
-    font-size: 18px;
-  }
-
-  margin-bottom: 70px;
-}
-
-.form-wrap {
-  @include tablets {
+  &__block-area {
     display: flex;
     flex-direction: column;
-    align-items: center;
   }
 
-  @include iphone {
-    text-align: center;
+  &__input-textarea {
+    @include tablets {
+      width: 687px;
+    }
+
+    @include medium {
+      width: 540px;
+    }
+
+    @include small {
+      width: 330px;
+    }
+
+    @include iphone {
+      width: 310px;
+    }
+
+    position: relative;
+    padding:10px 40px 10px 50px;
+    width: 840px;
+    height: 100%;
+    background: svg-load("../../images/icons/message.svg",
+      fill=#b8bbc3,
+      width=40px,
+      height=40px) no-repeat;
+    border-bottom: 2px solid #B8BBC3;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    resize: none;
+    color: #464d62;
+    font-family: "Open Sans";
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 36px;
+
+    &--error {
+      border-bottom: 2px solid red;
+      transition: 0.5s;
+      background: svg-load("../../images/icons/message.svg",
+          fill=red,
+          width=30px,
+          height=30px) no-repeat;
+    }
+
+    &:hover {
+      background: svg-load("../../images/icons/message.svg",
+          fill=$linear-endcolor,
+          width=30px,
+          height=30px) no-repeat;
+    }
   }
+
 }
-
 
 .form__input-username,
 .form__input-email {
@@ -66,7 +180,7 @@
   border-top: none;
   border-left: none;
   border-right: none;
-  color: #464d62;
+  color: $text-color;
   font-family: "Open Sans";
   font-size: 18px;
   font-weight: 700;
@@ -80,12 +194,12 @@
 .form__input-username {
   background: svg-load("../../images/icons/Avatar.svg",
       fill=#b8bbc3,
-      width=36px,
-      height=40px) no-repeat;
+      width=32px,
+      height=36px) no-repeat;
 
   &:hover {
     background: svg-load("../../images/icons/Avatar.svg",
-        fill=#5500f2,
+        fill=$linear-endcolor,
         width=26px,
         height=30px) no-repeat;
   }
@@ -106,7 +220,7 @@
 
   &:hover {
     background: svg-load("../../images/icons/envelope.svg",
-        fill=#5500f2,
+        fill=$linear-endcolor,
         width=30px,
         height=23px) no-repeat;
   }
@@ -122,128 +236,10 @@
 .form__input-username:hover,
 .form__input-textarea:hover,
 .form__input-email:hover {
-  border-bottom-color: #5500f2;
+  border-bottom-color: $linear-endcolor;
   transition: 0.5s;
 }
 
-
-
-
-
-
-.form-icon {
-  @include iphone {
-    opacity: 0;
-  }
-
-  margin-bottom: -40px;
-}
-
-.form__block {
-  @include tablets {
-    margin-right: 20px;
-  }
-
-  @include small {
-    margin-right: 0;
-  }
-
-
-  display: flex;
-  flex-direction: column;
-  margin-right: 85px;
-
-  &:first-child {
-    @include iphone {
-      margin-bottom: 30px;
-    }
-  }
-
-  &:last-child {
-    margin-right: 0;
-  }
-
-  &-title {
-    @include iphone {
-      padding: 0;
-    }
-
-    opacity: 0.5;
-    color: #464d62;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 30px;
-    margin-bottom: 10px;
-    padding-left: 50px;
-  }
-}
-
-.form__row {
-  @include small {
-    flex-direction: column;
-  }
-
-  display: flex;
-  margin-bottom: 60px;
-}
-
-.form__block-area {
-  display: flex;
-  flex-direction: column;
-}
-
-.form__input-textarea {
-  @include tablets {
-    width: 687px;
-  }
-
-  @include medium {
-    width: 540px;
-  }
-
-  @include small {
-    width: 330px;
-  }
-
-  @include iphone {
-    width: 310px;
-  }
-
-  position: relative;
-  padding:10px 40px 10px 50px;
-  width: 840px;
-  height: 100%;
-  background: svg-load("../../images/icons/message.svg",
-    fill=#b8bbc3,
-    width=40px,
-    height=40px) no-repeat;
-  border-bottom: 2px solid #B8BBC3;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  resize: none;
-  color: #464d62;
-  font-family: "Open Sans";
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 36px;
-
-  &--error {
-    border-bottom: 2px solid red;
-    transition: 0.5s;
-    background: svg-load("../../images/icons/message.svg",
-        fill=red,
-        width=30px,
-        height=30px) no-repeat;
-  }
-
-  &:hover {
-    background: svg-load("../../images/icons/message.svg",
-        fill=#5500f2,
-        width=30px,
-        height=30px) no-repeat;
-  }
-}
 
 .btn-submit {
   @include small {
@@ -264,9 +260,4 @@
   &:hover {
     background-image: linear-gradient(to left, #bb00ff 0%, #5900ff 100%);
   }
-}
-
-
-.form__block-container {
-  position: relative;
 }

@@ -2,25 +2,23 @@
   display: flex;
   z-index: 5;
 
+  &__item {
+    width: 50%;
+    display: block;
+    height: 80px;
+    fill: #fff;
+
+    &-bottom {
+      width: 50%;
+      display: block;
+      height: 80px;
+      fill: #fff;
+      transform: rotate(180deg);
+
+    }
+  }
+
 }
-
-.triangles__item {
-  width: 50%;
-  display: block;
-  height: 80px;
-  fill: #fff;
-
-}
-
-.triangles__item-bottom {
-  width: 50%;
-  display: block;
-  height: 80px;
-  fill: #fff;
-  transform: rotate(180deg);
-
-}
-
 
 .values-section__triangles {
   position: absolute;
@@ -28,6 +26,13 @@
   left: 0;
   right: 0;
   z-index: 5;
+
+  &-bottom {
+    position: absolute;
+    left: 0;
+    right: 0;
+
+  }
 }
 
 .reviews-section__triangles {
@@ -35,11 +40,4 @@
   top: 100%;
   left: 0;
   right: 0;
-}
-
-.values-section__triangles-bottom {
-  position: absolute;
-  left: 0;
-  right: 0;
-
 }

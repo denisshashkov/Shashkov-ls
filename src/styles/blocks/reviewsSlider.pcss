@@ -1,65 +1,67 @@
-.reviews-section {
-  @include iphone {
-    min-height: 550px;
+.reviews {
+  &-section {
+    @include iphone {
+      min-height: 550px;
+    }
+
+    min-height: 650px;
+    position: relative;
   }
 
-  min-height: 650px;
-  position: relative;
-}
+  &__container {
+    @include medium {
+      justify-content: center;
+      align-items: center;
+    }
 
-.reviews__container {
-  @include medium {
-    justify-content: center;
-    align-items: center;
-  }
-
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  min-height: 550px;
-  margin: 0 auto;
-  align-items: flex-start;
-}
-
-.reviews-carousel {
-  width: 100%;
-  height: 300px;
-
-  @include phones {
-    height: 330px;
-  }
-}
-
-.reviews__header {
-  @include tablets {
+    display: flex;
     flex-direction: column;
+    justify-content: flex-end;
+    min-height: 550px;
+    margin: 0 auto;
+    align-items: flex-start;
+  }
+
+  &-carousel {
     width: 100%;
-    margin-bottom: 50px;
+    height: 300px;
+
+    @include phones {
+      height: 330px;
+    }
   }
 
-  @include iphone {
-    margin-bottom: 30px;
+  &__header {
+    @include tablets {
+      flex-direction: column;
+      width: 100%;
+      margin-bottom: 50px;
+    }
+
+    @include iphone {
+      margin-bottom: 30px;
+    }
+
+    display: flex;
+    align-items: center;
+    margin-bottom: 80px;
+    width: 75%;
   }
 
-  display: flex;
-  align-items: center;
-  margin-bottom: 80px;
-  width: 75%;
-}
+  &__title {
+    @include tablets {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
 
-.reviews__title {
-  @include tablets {
-    font-size: 32px;
-    margin-bottom: 20px;
+    @include iphone {
+      font-size: 28px;
+    }
+
+    @include phones {
+      font-size: 24px;
+    }
+
+    flex: 0.55;
   }
-
-  @include iphone {
-    font-size: 28px;
-  }
-
-  @include phones {
-    font-size: 24px;
-  }
-
-  flex: 0.55;
 }

@@ -2,7 +2,6 @@
 
   & .menu__mobile {
     display: initial;
-    transition: transform .3s;
 
     @include tablets {
       &.show {
@@ -40,6 +39,7 @@
         flex-basis: 57%;
         flex-shrink: 0;
 
+
         @include phones {
           flex-basis: 30%;
         }
@@ -59,6 +59,7 @@
         flex-direction: column;
         justify-content: center;
         padding-left: 9%;
+        animation: fromRight .6s;
 
         @include phones {
           flex-basis: 70%;
@@ -96,6 +97,7 @@
       }
 
       .menu__item {
+        margin-right: 0;
         margin-bottom: 30px;
 
         &:last-child {
@@ -112,5 +114,17 @@
       }
 
     }
+  }
+}
+
+@keyframes fromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
   }
 }

@@ -1,9 +1,4 @@
 .budda {
-  @include tablets {
-    padding-top: 100px;
-    background: url('../images/content/budda/background.png')center center/cover no-repeat;
-  }
-
   padding-top: 60px;
   position: relative;
   min-height: 1400px;
@@ -13,39 +8,26 @@
   justify-content: space-between;
   width: 100%;
   overflow: hidden;
-
 }
 
+.budda>.parallax {
+  @include tablets {
+    background-image: url('~images/content/budda/Budda.jpg');
+  }
+}
 
 .parallax__layer-buda {
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  width: 100%;
-  height: 100%;
-  will-change: transform;
-
-  &:nth-child(1) {
-    .parallax__image-buda {
-      object-fit: cover;
-      max-width: initial;
-      min-width: 100%;
-      object-fit: cover;
-      height: 100%;
-    }
-  }
 
   &:nth-child(2) {
     .parallax__image-buda {
       width: 100%;
-      top: 1440px;
+      top: 1600px;
     }
   }
 
   &:nth-child(3) {
     .parallax__image-buda {
-      top: 1000px;
+      top: 1350px;
       left: 50%;
       margin-left: 17%;
     }
@@ -54,28 +36,22 @@
   &:nth-child(4) {
     .parallax__image-buda {
       width: 100%;
-      bottom: -350px;
+      bottom: -320px;
     }
   }
 
   &:nth-child(5) {
     .parallax__image-buda {
-      left: 30%;
-      top: 950px;
+      left: 5%;
+      bottom: -500px;
     }
   }
 
   &:nth-child(6) {
     .parallax__image-buda {
-      bottom: 0;
-      left: 50%;
+      top: 1600px;
+      left: 20%;
 
     }
   }
-}
-
-.parallax__image-buda {
-  position: absolute;
-  will-change: transform;
-  transition: transform 0.3s;
 }
