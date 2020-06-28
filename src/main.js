@@ -13,7 +13,8 @@ import "./scripts/parallax";
 import "./components/blocks/reviewsSlider/reviews";
 import "./scripts/menu";
 import "./components/blocks/form/validations";
-import "./scripts/name";
+import "./scripts/myName";
+import "./scripts/progressBar";
 
 
 
