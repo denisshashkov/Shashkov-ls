@@ -95,9 +95,9 @@ new Vue({
   }
 });
 
-//---------------
+
 // мобильное меню
-//----------------
+
 
 const listItem = {
   template: "#list-item",
@@ -170,7 +170,7 @@ const scrollButton = document.querySelector('.mountains__button-btn');
 
 scrollButton.addEventListener('click', e => {
   scrollButton.scrollIntoView({
-    behavior: "smooth"
+    behavior: "smooth",
   });
   scrollButton.classList.add('noActive')
 });

@@ -20,43 +20,43 @@ export default {
     color: {
       type: String,
       default: "dark",
-      validator: (value) => ["dark"].includes(value),
+      validator: value => ["dark"].includes(value)
     },
     size: {
       type: String,
       default: "medium",
-      validator: (value) => ["medium"].includes(value),
+      validator: value => ["medium"].includes(value)
     },
     icon: {
       type: String,
       default: "",
-      validator: (value) => ["", "arrow-left", "arrow-right"].includes(value),
+      validator: value => ["", "arrow-left", "arrow-right"].includes(value)
     },
     iconStart: {
       type: String,
       default: "",
-      validator: (value) => ["", "arrow-left", "arrow-right"].includes(value),
+      validator: value => ["", "arrow-left", "arrow-right"].includes(value)
     },
     iconEnd: {
       type: String,
       default: "",
-      validator: (value) => ["", "arrow-left", "arrow-right"].includes(value),
+      validator: value => ["", "arrow-left", "arrow-right"].includes(value)
     },
     type: {
       type: String,
       default: "button",
-      validator: (value) => ["button", "submit", "reset"].includes(value),
+      validator: value => ["button", "submit", "reset"].includes(value)
     },
     onlyIcon: {
       type: Boolean,
-      default: false,
+      default: false
     },
     rounded: Boolean,
     plain: Boolean,
-    disabled: Boolean,
+    disabled: Boolean
   },
   components: {
-    SvgIcon,
+    SvgIcon
   },
   computed: {
     classes() {
@@ -84,8 +84,8 @@ export default {
     },
     showText() {
       return !this.onlyIcon && !!this.$slots.default;
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -111,7 +111,6 @@ export default {
     display: flex;
     position: relative;
     width: 10px;
-    height: auto;
     justify-content: center;
   }
 }

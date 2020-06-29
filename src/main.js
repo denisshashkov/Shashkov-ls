@@ -19,6 +19,7 @@ import "./scripts/progressBar";
 
 
 
+
 //////////////Skills////////////////////////////
 
 import Skills from './components/blocks/skills/skills';

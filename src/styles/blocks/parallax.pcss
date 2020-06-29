@@ -69,6 +69,8 @@
       top: 400px;
       left: 50%;
       margin-left: 17%;
+      animation: bounce-sphere 8s;
+      animation-iteration-count: infinite;
     }
   }
 
@@ -111,4 +113,18 @@
   position: absolute;
   will-change: transform;
   transition: transform 0.3s;
+}
+
+@keyframes bounce-sphere {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-100px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }

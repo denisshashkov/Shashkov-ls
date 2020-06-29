@@ -47,8 +47,10 @@ script(type="text/x-template")#navigation--mobile
               :item="item"
               :showMenu="showMenu"
               @scroll="scrollToSection"
-            ).menu__item                            
+            ).menu__item 
+          include ../userOptions/userOptions                             
           include ../socials/socials
+
 
 script(type="text/x-template")#list-item
   div

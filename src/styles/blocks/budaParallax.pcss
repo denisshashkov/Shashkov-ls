@@ -30,6 +30,8 @@
       top: 1350px;
       left: 50%;
       margin-left: 17%;
+      animation: bounce-sphere 8s;
+      animation-iteration-count: infinite;
     }
   }
 
@@ -53,5 +55,19 @@
       left: 20%;
 
     }
+  }
+}
+
+@keyframes bounce-sphere {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-100px);
+  }
+
+  100% {
+    transform: translateY(0);
   }
 }
