@@ -15,6 +15,7 @@ import "./scripts/menu";
 import "./components/blocks/form/validations";
 import "./scripts/myName";
 import "./scripts/progressBar";
+import "./scripts/userOptions";
 
 
 

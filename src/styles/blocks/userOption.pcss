@@ -1,13 +1,18 @@
 .user-options {
-  @include tablets {
-    display: none;
-  }
-
   margin-right: 20px;
 
   &__button {
+    @include small {
+      width: 90px;
+      height: 30px;
+      font-size: 16px;
+    }
+
     width: 120px;
     height: 40px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
     border-radius: 40px 5px;
     font-family: "Open Sans";
     background-image: linear-gradient(to right, #9300e8 0%, #4a00ed 100%);
@@ -16,17 +21,4 @@
       background-image: linear-gradient(to left, #bb00ff 0%, #5900ff 100%);
     }
   }
-}
-
-.user-options__button-link {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 18px;
-}
-
-.menu__right>.user-options {
-  display: flex;
-  margin-right: 0;
-  margin-bottom: 30px;
 }
