@@ -109,9 +109,7 @@ export default {
 
   &__icon {
     display: flex;
-    position: relative;
     width: 10px;
-    justify-content: center;
   }
 }
 
@@ -136,7 +134,7 @@ export default {
   }
 
   &--rounded {
-    border-radius: 100%;
+    border-radius: 50%;
     padding: 8px;
   }
 
