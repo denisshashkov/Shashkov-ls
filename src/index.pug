@@ -65,41 +65,33 @@ html(lang="ru")
                 .about__text Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
                 .about__ps Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
         <!--===========Triangles Block=============-->
-        .triangles.values-section__triangles
-          svg.triangles__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
-            polygon(points="0,0 0,100 1000,100")
-          svg.triangles__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
-            polygon(points="0,100 1000,100 1000,0")
+          include ./components/blocks/trianglesOne/trianglesOne
         <!--============Values Section==============-->
-        section#section_3    
-          .values#skills  
-            .container.values__container   
-              .values__content
-                .values__header
-                  h2.title.values__title Чем я могу быть полезен вам
-                  p.values__description Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-                .values__skills#skills-list
-                  vc-skills
+          section#section_3    
+            .values#skills  
+              .container.values__container   
+                .values__content
+                  .values__header
+                    h2.title.values__title Чем я могу быть полезен вам
+                    p.values__description Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+                  .values__skills#skills-list
+                    vc-skills 
         <!--============Works Section===============-->          
-        section#section_4          
-          .works#works
-            .container.works__container
-              h2.title.works__title Мои работы
-              .works__wrapper
-                .works__slider
-                  vc-works-slider
-                .works__content
-                  .works__tags
-                    vc-tags
-                  vc-work
-        <!--==========Triangles Block===============-->
-        .triangles.values-section__triangles-bottom
-          svg.triangles__item-bottom(viewBox="0 0 1000 100" preserveAspectRatio="none")
-            polygon(points="0,0 0,100 1000,100")
-          svg.triangles__item-bottom(viewBox="0 0 1000 100" preserveAspectRatio="none")
-            polygon(points="0,100 1000,100 1000,0")
+          section#section_4          
+            .works#works
+              .container.works__container
+                h2.title.works__title Мои работы
+                .works__wrapper
+                  .works__slider
+                    vc-works-slider
+                  .works__content
+                    .works__tags
+                      vc-tags
+                    vc-work
+        <!--===========Triangles Block==============-->
+          include ./components/blocks/trianglesTwo/trianglesTwo 
         <!--===========Overall Section Budda=========-->  
-        .budda
+        .budda   
           include ./components/blocks/buddaParallax/buddaParallax
           <!--============Reviews Section============-->
           include ./components/blocks/reviewsSlider/reviews
