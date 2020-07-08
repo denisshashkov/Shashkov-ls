@@ -1,13 +1,14 @@
-section.reviews-section#reviews
-  .container.reviews__container
-    .reviews__header
-      h2.title.reviews__title Что обо мне говорят
-      .reviews__controls
-        controls(
-          :has-previous="activePage === 0"
-          :has-next="activePage === pages"
-          @previous="previous"
-          @next="next"
-        )
-    .reviews-carousel
-      reviews-carousel(:reviews="reviews")     
+section#section_5
+  .reviews-section#reviews
+    .container.reviews__container
+      .reviews__header
+        h2.title.reviews__title Что обо мне говорят
+        .reviews__controls
+          controls(
+            :has-previous="activePage === 0"
+            :has-next="activePage === pages"
+            @previous="previous"
+            @next="next"
+          )
+      .reviews-carousel
+        reviews-carousel(:reviews="reviews")     

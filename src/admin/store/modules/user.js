@@ -6,15 +6,26 @@ export default {
   mutations: {
     SET_USER: (state, user) => {
       state.user = user;
+    },
+    LOGOUT_USER: (state) => {
+      state.user = {}
+    }
+  },
+  actions: {
+    setUser: (context, payload) => {
+      context.commit("SET_USER", payload);
+    },
+    async logoutUser(context, payload) {
+      await this.$axios.post('/logout');
+      context.commit('LOGOUT_USER');
+      localStorage.removeItem("token");
     }
   },
   getters: {
-    userIsLogged: state => {
-      const userObj = state.user;
-      const userObjectIsEmpty =
-        Object.keys(userObj).length === 0 && userObj.constructor === Object;
-
-      return userObjectIsEmpty === false;
+    userIsLogged: ({
+      user
+    }) => {
+      return (Object.keys(user).length === 0 && user.constructor === Object) === false;
     }
   }
 };

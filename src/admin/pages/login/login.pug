@@ -1,0 +1,42 @@
+.login
+  .login__content
+    form(@submit.prevent="login").login__form#form
+      .login__close
+        button(
+          @click="close"
+          type="button").login__close-btn
+      .login__title-box
+        h1.login__title Авторизация
+      .form-wrap
+        .form__row-admin           
+          label(for="input__name").form__block
+            span.form__block-title Логин
+            .form__block-container
+              input(
+                type="text"
+                name="name"
+                placeholder="Terminator_2000"
+                id="input__name"
+                v-model="user.name"
+                v-bind:class="{ 'form__input-name--error': validation.hasError('user.name') }" 
+                ).form__input-name 
+              .form__tooltip(class="showed")
+                .form__tooltip-text(v-bind:class="{'form__tooltip-text--showed': validation.hasError('user.name')}") {{ validation.firstError('user.name') }}                     
+
+        .form__row-admin
+          label(for="input__password").form__block
+            span.form__block-title Пароль
+            .form__block-container
+              input(
+                type="Password"
+                name="password"
+                placeholder="*************"
+                id="input__password"
+                v-model="user.password"
+                v-bind:class="{ 'form__input-password--error': validation.hasError('user.password') }"
+              ).form__input-password
+              .form__tooltip(class="showed")
+                .form__tooltip-text(v-bind:class="{'form__tooltip-text--showed': validation.hasError('user.password')}") {{ validation.firstError('user.password') }}
+        .form__row-admin
+          .form__button
+            button(type="submit").btn-submit отправить 

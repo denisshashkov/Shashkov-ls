@@ -1,10 +1,16 @@
 .welcome {
-  min-height: 1600px;
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   width: 100%;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 1775px;
 
+  @include desktop {
+    min-height: 1740px;
+  }
+
+  @include tablets {
+    min-height: 1400px;
+  }
 }

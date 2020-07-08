@@ -25,7 +25,7 @@ new Vue({
     }
   },
   created() {
-    axios.get('https://webdev-api.loftschool.com/reviews/174')
+    axios.get('https://webdev-api.loftschool.com/reviews/343')
       .then(reviews => {
         return reviews.data.map(review => {
           return (review.photo = 'https://webdev-api.loftschool.com/' + review.photo) && review

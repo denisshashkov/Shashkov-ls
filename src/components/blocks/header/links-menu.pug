@@ -1,7 +1,0 @@
-.header__links-menu
-  - var icons = ['insta', 'vk', 'github'];
-    ul.socials
-      each item, index in icons
-        li.socials__item(class=`${index === 1 ? 'active' : ''}`)
-          a(href="#", target="_blank").socials__link
-             +icon(`${item}`, 'socials__icon')

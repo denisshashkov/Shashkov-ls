@@ -1,0 +1,24 @@
+.user-options {
+  margin-right: 20px;
+
+  &__button {
+    @include small {
+      width: 90px;
+      height: 30px;
+      font-size: 16px;
+    }
+
+    width: 120px;
+    height: 40px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 40px 5px;
+    font-family: "Open Sans";
+    background-image: linear-gradient(to right, #9300e8 0%, #4a00ed 100%);
+
+    &:hover {
+      background-image: linear-gradient(to left, #bb00ff 0%, #5900ff 100%);
+    }
+  }
+}

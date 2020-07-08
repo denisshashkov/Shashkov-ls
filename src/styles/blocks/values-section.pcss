@@ -1,104 +1,85 @@
-.values-section {
-
-  position: relative;
-  margin-bottom: 100px;
-}
-
-
-
-
 .values {
-  @include desktop {
-    justify-content: space-between;
-  }
+  position: relative;
+  padding: 147px 0 63px;
+  min-height: 650px;
 
-  @include tablets {
-    flex-direction: column-reverse;
-    align-items: center;
-  }
-
-  display: flex;
-  padding-top: 130px;
-  margin-bottom: 130px;
-
-  &__title {
-    @include tablets {
-      text-align: center;
-    }
-
-    @include small {
-      text-align: start;
-      padding: 0px 84px;
-    }
-
-    @include iphone {
-      padding: 0px 20px;
-    }
-
-    color: #464d62;
-    font-family: "Open Sans";
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 36px;
-    margin-bottom: 58px;
-  }
-
-  &__text {
-    @include tablets {
-      text-align: center;
-    }
-
-    @include small {
-      text-align: start;
-      padding: 0px 100px;
-    }
-
-    @include iphone {
-      padding: 0px 20px;
-    }
-
-    opacity: 0.5;
-    color: #464d62;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 30px;
-    max-width: 585px;
-    margin-bottom: 90px;
-  }
-
-  &__left {
-    display: flex;
-    align-items: flex-end;
-
-    @include tablets {
-      min-height: 350px;
-      width: 740px;
-      position: relative;
-    }
-  }
-
-  &__right {
-    max-width: 900px;
+  &__container {
     display: flex;
     flex-direction: column;
-  }
-}
-
-.values__left-content {
-  @include desktop {
-    position: absolute;
-    top: 40%;
-    left: 0;
-    transform: translate(-26%, -31%)
+    align-items: flex-end;
   }
 
-  @include tablets {
-    width: 316px;
-    height: 281px;
-    transform: translate(70%, -31%)
+  &__header {
+
+
+    @include tablets {
+      width: 80%;
+      margin: 0 auto 102px;
+      text-align: center;
+    }
   }
 
-  display: flex;
-  justify-content: center;
-  position: static;
+  &__title {
+    font-size: 30px;
+    line-height: 36px;
+    margin-bottom: 53px;
+  }
+
+  &__description {
+    font-weight: 600;
+    line-height: 30px;
+    color: #B0B3BA;
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 70%;
+    min-height: 627px;
+
+    @include desktop {
+      width: auto;
+      margin-left: calc(83vw - 40rem);
+    }
+
+    @include tablets {
+      margin-left: 0;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 520px;
+      height: 627px;
+      background-image: url('~images/content/backpag.png');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      left: -500px;
+      z-index: 100;
+
+      @include tablets {
+        width: calc(520px / 2);
+        height: calc(627px / 2);
+        position: relative;
+        top: unset;
+        left: 50%;
+        transform: translate(-50%, 0);
+      }
+    }
+
+  }
+
+  &__skills {
+    margin-left: 11%;
+
+    @include tablets {
+      margin-left: 0;
+    }
+  }
 }

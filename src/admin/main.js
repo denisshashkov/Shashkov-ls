@@ -1,38 +1,22 @@
 import Vue from 'vue';
-import VueRouter from 'vue-router';
 import App from './App.vue';
-import About from './pages/about';
-import Works from './pages/works';
-import Reviews from './pages/reviews';
-import Login from './pages/login';
+import router from './router';
+import axios from './requests';
+import store from './store';
 
 
 
-const router = new VueRouter({
-  routes: [{
-      path: '/',
-      component: About
-    },
-    {
-      path: '/works',
-      component: Works
-    },
-    {
-      path: '/reviews',
-      component: Reviews
-    },
-    {
-      path: '/login',
-      component: Login
-    }
-  ]
-});
+store.$axios = axios;
+Vue.prototype.$axios = axios;
 
-Vue.use(VueRouter);
+
+
+
 
 
 new Vue({
   el: "#app-root",
   router,
+  store,
   render: h => h(App)
 });

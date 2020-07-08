@@ -7,21 +7,23 @@
           main.content
             .page-container
               router-view
+          vc-tooltip()   
 </template>
 
 <script>
-import header from "./components/header";
-import tabs from "./components/tabs";
+import header from "./components/header/header.vue";
+import tabs from "./components/tabs/tabs.vue";
 export default {
   components: {
     vcHeader: header,
-    vcTabs: tabs
+    vcTabs: tabs,
+    vcTooltip: () => import("components/tooltip/tooltip.vue/")
   }
 };
 </script>
 
 <style lang="pcss">
-@import "./default.pcss";
+@import "./styles/main.pcss";
 button {
   border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
   border-style: solid;

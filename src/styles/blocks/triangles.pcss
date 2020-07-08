@@ -1,41 +1,43 @@
 .triangles {
   display: flex;
   z-index: 5;
-}
 
-.triangles__item {
-  width: 50%;
-  display: block;
-  height: 80px;
-  fill: #fff;
-}
+  &__item {
+    width: 50%;
+    display: block;
+    height: 80px;
+    fill: #fff;
 
-.triangles__item-bottom {
-  width: 50%;
-  display: block;
-  height: 80px;
-  fill: #fff;
-  transform: rotate(180deg);
-}
 
+    &-bottom {
+      width: 50%;
+      display: block;
+      height: 80px;
+      fill: #fff;
+      transform: rotate(180deg);
+
+    }
+  }
+}
 
 .values-section__triangles {
   position: absolute;
-  bottom: 100%;
+  margin-top: -80px;
   left: 0;
   right: 0;
   z-index: 5;
+
+  &-bottom {
+    position: absolute;
+    left: 0;
+    right: 0;
+
+  }
 }
 
 .reviews-section__triangles {
   position: absolute;
   top: 100%;
-  left: 0;
-  right: 0;
-}
-
-.values-section__triangles-bottom {
-  position: absolute;
   left: 0;
   right: 0;
 }
